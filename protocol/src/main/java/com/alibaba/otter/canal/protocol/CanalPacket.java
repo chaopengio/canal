@@ -8,22 +8,49 @@ public final class CanalPacket {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code com.alibaba.otter.canal.protocol.Compression}
+   */
   public enum Compression
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NONE = 1;</code>
+     */
     NONE(0, 1),
+    /**
+     * <code>ZLIB = 2;</code>
+     */
     ZLIB(1, 2),
+    /**
+     * <code>GZIP = 3;</code>
+     */
     GZIP(2, 3),
+    /**
+     * <code>LZF = 4;</code>
+     */
     LZF(3, 4),
     ;
-    
+
+    /**
+     * <code>NONE = 1;</code>
+     */
     public static final int NONE_VALUE = 1;
+    /**
+     * <code>ZLIB = 2;</code>
+     */
     public static final int ZLIB_VALUE = 2;
+    /**
+     * <code>GZIP = 3;</code>
+     */
     public static final int GZIP_VALUE = 3;
+    /**
+     * <code>LZF = 4;</code>
+     */
     public static final int LZF_VALUE = 4;
-    
-    
+
+
     public final int getNumber() { return value; }
-    
+
     public static Compression valueOf(int value) {
       switch (value) {
         case 1: return NONE;
@@ -33,7 +60,7 @@ public final class CanalPacket {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<Compression>
         internalGetValueMap() {
       return internalValueMap;
@@ -45,7 +72,7 @@ public final class CanalPacket {
               return Compression.valueOf(number);
             }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -58,11 +85,9 @@ public final class CanalPacket {
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.getDescriptor().getEnumTypes().get(0);
     }
-    
-    private static final Compression[] VALUES = {
-      NONE, ZLIB, GZIP, LZF, 
-    };
-    
+
+    private static final Compression[] VALUES = values();
+
     public static Compression valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -71,50 +96,141 @@ public final class CanalPacket {
       }
       return VALUES[desc.getIndex()];
     }
-    
+
     private final int index;
     private final int value;
-    
+
     private Compression(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
+
     // @@protoc_insertion_point(enum_scope:com.alibaba.otter.canal.protocol.Compression)
   }
-  
+
+  /**
+   * Protobuf enum {@code com.alibaba.otter.canal.protocol.PacketType}
+   */
   public enum PacketType
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>HANDSHAKE = 1;</code>
+     */
     HANDSHAKE(0, 1),
+    /**
+     * <code>CLIENTAUTHENTICATION = 2;</code>
+     */
     CLIENTAUTHENTICATION(1, 2),
+    /**
+     * <code>ACK = 3;</code>
+     */
     ACK(2, 3),
+    /**
+     * <code>SUBSCRIPTION = 4;</code>
+     */
     SUBSCRIPTION(3, 4),
+    /**
+     * <code>UNSUBSCRIPTION = 5;</code>
+     */
     UNSUBSCRIPTION(4, 5),
+    /**
+     * <code>GET = 6;</code>
+     */
     GET(5, 6),
+    /**
+     * <code>MESSAGES = 7;</code>
+     */
     MESSAGES(6, 7),
+    /**
+     * <code>CLIENTACK = 8;</code>
+     */
     CLIENTACK(7, 8),
+    /**
+     * <code>SHUTDOWN = 9;</code>
+     *
+     * <pre>
+     * management part
+     * </pre>
+     */
     SHUTDOWN(8, 9),
+    /**
+     * <code>DUMP = 10;</code>
+     *
+     * <pre>
+     * integration
+     * </pre>
+     */
     DUMP(9, 10),
+    /**
+     * <code>HEARTBEAT = 11;</code>
+     */
     HEARTBEAT(10, 11),
+    /**
+     * <code>CLIENTROLLBACK = 12;</code>
+     */
     CLIENTROLLBACK(11, 12),
     ;
-    
+
+    /**
+     * <code>HANDSHAKE = 1;</code>
+     */
     public static final int HANDSHAKE_VALUE = 1;
+    /**
+     * <code>CLIENTAUTHENTICATION = 2;</code>
+     */
     public static final int CLIENTAUTHENTICATION_VALUE = 2;
+    /**
+     * <code>ACK = 3;</code>
+     */
     public static final int ACK_VALUE = 3;
+    /**
+     * <code>SUBSCRIPTION = 4;</code>
+     */
     public static final int SUBSCRIPTION_VALUE = 4;
+    /**
+     * <code>UNSUBSCRIPTION = 5;</code>
+     */
     public static final int UNSUBSCRIPTION_VALUE = 5;
+    /**
+     * <code>GET = 6;</code>
+     */
     public static final int GET_VALUE = 6;
+    /**
+     * <code>MESSAGES = 7;</code>
+     */
     public static final int MESSAGES_VALUE = 7;
+    /**
+     * <code>CLIENTACK = 8;</code>
+     */
     public static final int CLIENTACK_VALUE = 8;
+    /**
+     * <code>SHUTDOWN = 9;</code>
+     *
+     * <pre>
+     * management part
+     * </pre>
+     */
     public static final int SHUTDOWN_VALUE = 9;
+    /**
+     * <code>DUMP = 10;</code>
+     *
+     * <pre>
+     * integration
+     * </pre>
+     */
     public static final int DUMP_VALUE = 10;
+    /**
+     * <code>HEARTBEAT = 11;</code>
+     */
     public static final int HEARTBEAT_VALUE = 11;
+    /**
+     * <code>CLIENTROLLBACK = 12;</code>
+     */
     public static final int CLIENTROLLBACK_VALUE = 12;
-    
-    
+
+
     public final int getNumber() { return value; }
-    
+
     public static PacketType valueOf(int value) {
       switch (value) {
         case 1: return HANDSHAKE;
@@ -132,7 +248,7 @@ public final class CanalPacket {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<PacketType>
         internalGetValueMap() {
       return internalValueMap;
@@ -144,7 +260,7 @@ public final class CanalPacket {
               return PacketType.valueOf(number);
             }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -157,11 +273,9 @@ public final class CanalPacket {
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.getDescriptor().getEnumTypes().get(1);
     }
-    
-    private static final PacketType[] VALUES = {
-      HANDSHAKE, CLIENTAUTHENTICATION, ACK, SUBSCRIPTION, UNSUBSCRIPTION, GET, MESSAGES, CLIENTACK, SHUTDOWN, DUMP, HEARTBEAT, CLIENTROLLBACK, 
-    };
-    
+
+    private static final PacketType[] VALUES = values();
+
     public static PacketType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -170,434 +284,119 @@ public final class CanalPacket {
       }
       return VALUES[desc.getIndex()];
     }
-    
+
     private final int index;
     private final int value;
-    
+
     private PacketType(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
+
     // @@protoc_insertion_point(enum_scope:com.alibaba.otter.canal.protocol.PacketType)
   }
-  
+
   public interface PacketOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional int32 magic_number = 1 [default = 17];
+    /**
+     * <code>optional int32 magic_number = 1 [default = 17];</code>
+     */
     boolean hasMagicNumber();
+    /**
+     * <code>optional int32 magic_number = 1 [default = 17];</code>
+     */
     int getMagicNumber();
-    
+
     // optional int32 version = 2 [default = 1];
+    /**
+     * <code>optional int32 version = 2 [default = 1];</code>
+     */
     boolean hasVersion();
+    /**
+     * <code>optional int32 version = 2 [default = 1];</code>
+     */
     int getVersion();
-    
+
     // optional .com.alibaba.otter.canal.protocol.PacketType type = 3;
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+     */
     boolean hasType();
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+     */
     com.alibaba.otter.canal.protocol.CanalPacket.PacketType getType();
-    
+
     // optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+     */
     boolean hasCompression();
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+     */
     com.alibaba.otter.canal.protocol.CanalPacket.Compression getCompression();
-    
+
     // optional bytes body = 5;
+    /**
+     * <code>optional bytes body = 5;</code>
+     */
     boolean hasBody();
+    /**
+     * <code>optional bytes body = 5;</code>
+     */
     com.google.protobuf.ByteString getBody();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Packet}
+   */
   public static final class Packet extends
       com.google.protobuf.GeneratedMessage
       implements PacketOrBuilder {
     // Use Packet.newBuilder() to construct.
-    private Packet(Builder builder) {
+    private Packet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Packet(boolean noInit) {}
-    
+    private Packet(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Packet defaultInstance;
     public static Packet getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Packet getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional int32 magic_number = 1 [default = 17];
-    public static final int MAGIC_NUMBER_FIELD_NUMBER = 1;
-    private int magicNumber_;
-    public boolean hasMagicNumber() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getMagicNumber() {
-      return magicNumber_;
-    }
-    
-    // optional int32 version = 2 [default = 1];
-    public static final int VERSION_FIELD_NUMBER = 2;
-    private int version_;
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getVersion() {
-      return version_;
-    }
-    
-    // optional .com.alibaba.otter.canal.protocol.PacketType type = 3;
-    public static final int TYPE_FIELD_NUMBER = 3;
-    private com.alibaba.otter.canal.protocol.CanalPacket.PacketType type_;
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public com.alibaba.otter.canal.protocol.CanalPacket.PacketType getType() {
-      return type_;
-    }
-    
-    // optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];
-    public static final int COMPRESSION_FIELD_NUMBER = 4;
-    private com.alibaba.otter.canal.protocol.CanalPacket.Compression compression_;
-    public boolean hasCompression() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public com.alibaba.otter.canal.protocol.CanalPacket.Compression getCompression() {
-      return compression_;
-    }
-    
-    // optional bytes body = 5;
-    public static final int BODY_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString body_;
-    public boolean hasBody() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public com.google.protobuf.ByteString getBody() {
-      return body_;
-    }
-    
-    private void initFields() {
-      magicNumber_ = 17;
-      version_ = 1;
-      type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
-      compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
-      body_ = com.google.protobuf.ByteString.EMPTY;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, magicNumber_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, version_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeEnum(3, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeEnum(4, compression_.getNumber());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, body_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, magicNumber_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, version_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, compression_.getNumber());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, body_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+    private Packet(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Packet prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.PacketOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_fieldAccessorTable;
-      }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Packet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        magicNumber_ = 17;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        version_ = 1;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        body_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Packet.getDescriptor();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Packet getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Packet.getDefaultInstance();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Packet build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Packet result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Packet buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Packet result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Packet buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Packet result = new com.alibaba.otter.canal.protocol.CanalPacket.Packet(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.magicNumber_ = magicNumber_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.version_ = version_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.compression_ = compression_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.body_ = body_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Packet) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Packet)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Packet other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Packet.getDefaultInstance()) return this;
-        if (other.hasMagicNumber()) {
-          setMagicNumber(other.getMagicNumber());
-        }
-        if (other.hasVersion()) {
-          setVersion(other.getVersion());
-        }
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasCompression()) {
-          setCompression(other.getCompression());
-        }
-        if (other.hasBody()) {
-          setBody(other.getBody());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -640,60 +439,502 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Packet.class, com.alibaba.otter.canal.protocol.CanalPacket.Packet.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Packet> PARSER =
+        new com.google.protobuf.AbstractParser<Packet>() {
+      public Packet parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Packet(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Packet> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional int32 magic_number = 1 [default = 17];
+    public static final int MAGIC_NUMBER_FIELD_NUMBER = 1;
+    private int magicNumber_;
+    /**
+     * <code>optional int32 magic_number = 1 [default = 17];</code>
+     */
+    public boolean hasMagicNumber() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 magic_number = 1 [default = 17];</code>
+     */
+    public int getMagicNumber() {
+      return magicNumber_;
+    }
+
+    // optional int32 version = 2 [default = 1];
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    /**
+     * <code>optional int32 version = 2 [default = 1];</code>
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 version = 2 [default = 1];</code>
+     */
+    public int getVersion() {
+      return version_;
+    }
+
+    // optional .com.alibaba.otter.canal.protocol.PacketType type = 3;
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private com.alibaba.otter.canal.protocol.CanalPacket.PacketType type_;
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+     */
+    public com.alibaba.otter.canal.protocol.CanalPacket.PacketType getType() {
+      return type_;
+    }
+
+    // optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];
+    public static final int COMPRESSION_FIELD_NUMBER = 4;
+    private com.alibaba.otter.canal.protocol.CanalPacket.Compression compression_;
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+     */
+    public boolean hasCompression() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+     */
+    public com.alibaba.otter.canal.protocol.CanalPacket.Compression getCompression() {
+      return compression_;
+    }
+
+    // optional bytes body = 5;
+    public static final int BODY_FIELD_NUMBER = 5;
+    private com.google.protobuf.ByteString body_;
+    /**
+     * <code>optional bytes body = 5;</code>
+     */
+    public boolean hasBody() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional bytes body = 5;</code>
+     */
+    public com.google.protobuf.ByteString getBody() {
+      return body_;
+    }
+
+    private void initFields() {
+      magicNumber_ = 17;
+      version_ = 1;
+      type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
+      compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
+      body_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, magicNumber_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, compression_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, body_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, magicNumber_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, compression_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, body_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Packet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Packet prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Packet}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.alibaba.otter.canal.protocol.CanalPacket.PacketOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Packet.class, com.alibaba.otter.canal.protocol.CanalPacket.Packet.Builder.class);
+      }
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Packet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        magicNumber_ = 17;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        body_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Packet getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.Packet.getDefaultInstance();
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Packet build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Packet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Packet buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Packet result = new com.alibaba.otter.canal.protocol.CanalPacket.Packet(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.magicNumber_ = magicNumber_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.compression_ = compression_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.body_ = body_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Packet) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Packet)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Packet other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Packet.getDefaultInstance()) return this;
+        if (other.hasMagicNumber()) {
+          setMagicNumber(other.getMagicNumber());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasCompression()) {
+          setCompression(other.getCompression());
+        }
+        if (other.hasBody()) {
+          setBody(other.getBody());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.alibaba.otter.canal.protocol.CanalPacket.Packet parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Packet) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // optional int32 magic_number = 1 [default = 17];
       private int magicNumber_ = 17;
+      /**
+       * <code>optional int32 magic_number = 1 [default = 17];</code>
+       */
       public boolean hasMagicNumber() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional int32 magic_number = 1 [default = 17];</code>
+       */
       public int getMagicNumber() {
         return magicNumber_;
       }
+      /**
+       * <code>optional int32 magic_number = 1 [default = 17];</code>
+       */
       public Builder setMagicNumber(int value) {
         bitField0_ |= 0x00000001;
         magicNumber_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 magic_number = 1 [default = 17];</code>
+       */
       public Builder clearMagicNumber() {
         bitField0_ = (bitField0_ & ~0x00000001);
         magicNumber_ = 17;
         onChanged();
         return this;
       }
-      
+
       // optional int32 version = 2 [default = 1];
       private int version_ = 1;
+      /**
+       * <code>optional int32 version = 2 [default = 1];</code>
+       */
       public boolean hasVersion() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional int32 version = 2 [default = 1];</code>
+       */
       public int getVersion() {
         return version_;
       }
+      /**
+       * <code>optional int32 version = 2 [default = 1];</code>
+       */
       public Builder setVersion(int value) {
         bitField0_ |= 0x00000002;
         version_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 version = 2 [default = 1];</code>
+       */
       public Builder clearVersion() {
         bitField0_ = (bitField0_ & ~0x00000002);
         version_ = 1;
         onChanged();
         return this;
       }
-      
+
       // optional .com.alibaba.otter.canal.protocol.PacketType type = 3;
       private com.alibaba.otter.canal.protocol.CanalPacket.PacketType type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+       */
       public com.alibaba.otter.canal.protocol.CanalPacket.PacketType getType() {
         return type_;
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+       */
       public Builder setType(com.alibaba.otter.canal.protocol.CanalPacket.PacketType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -703,21 +944,33 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.PacketType type = 3;</code>
+       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000004);
         type_ = com.alibaba.otter.canal.protocol.CanalPacket.PacketType.HANDSHAKE;
         onChanged();
         return this;
       }
-      
+
       // optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];
       private com.alibaba.otter.canal.protocol.CanalPacket.Compression compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+       */
       public boolean hasCompression() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+       */
       public com.alibaba.otter.canal.protocol.CanalPacket.Compression getCompression() {
         return compression_;
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+       */
       public Builder setCompression(com.alibaba.otter.canal.protocol.CanalPacket.Compression value) {
         if (value == null) {
           throw new NullPointerException();
@@ -727,21 +980,33 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional .com.alibaba.otter.canal.protocol.Compression compression = 4 [default = NONE];</code>
+       */
       public Builder clearCompression() {
         bitField0_ = (bitField0_ & ~0x00000008);
         compression_ = com.alibaba.otter.canal.protocol.CanalPacket.Compression.NONE;
         onChanged();
         return this;
       }
-      
+
       // optional bytes body = 5;
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes body = 5;</code>
+       */
       public boolean hasBody() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+      /**
+       * <code>optional bytes body = 5;</code>
+       */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
+      /**
+       * <code>optional bytes body = 5;</code>
+       */
       public Builder setBody(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -751,84 +1016,183 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional bytes body = 5;</code>
+       */
       public Builder clearBody() {
         bitField0_ = (bitField0_ & ~0x00000010);
         body_ = getDefaultInstance().getBody();
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Packet)
     }
-    
+
     static {
       defaultInstance = new Packet(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Packet)
   }
-  
+
   public interface HeartBeatOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional int64 send_timestamp = 1;
+    /**
+     * <code>optional int64 send_timestamp = 1;</code>
+     */
     boolean hasSendTimestamp();
+    /**
+     * <code>optional int64 send_timestamp = 1;</code>
+     */
     long getSendTimestamp();
-    
+
     // optional int64 start_timestamp = 2;
+    /**
+     * <code>optional int64 start_timestamp = 2;</code>
+     */
     boolean hasStartTimestamp();
+    /**
+     * <code>optional int64 start_timestamp = 2;</code>
+     */
     long getStartTimestamp();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.HeartBeat}
+   */
   public static final class HeartBeat extends
       com.google.protobuf.GeneratedMessage
       implements HeartBeatOrBuilder {
     // Use HeartBeat.newBuilder() to construct.
-    private HeartBeat(Builder builder) {
+    private HeartBeat(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private HeartBeat(boolean noInit) {}
-    
+    private HeartBeat(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final HeartBeat defaultInstance;
     public static HeartBeat getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public HeartBeat getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private HeartBeat(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              sendTimestamp_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              startTimestamp_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.class, com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<HeartBeat> PARSER =
+        new com.google.protobuf.AbstractParser<HeartBeat>() {
+      public HeartBeat parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new HeartBeat(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HeartBeat> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional int64 send_timestamp = 1;
     public static final int SEND_TIMESTAMP_FIELD_NUMBER = 1;
     private long sendTimestamp_;
+    /**
+     * <code>optional int64 send_timestamp = 1;</code>
+     */
     public boolean hasSendTimestamp() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>optional int64 send_timestamp = 1;</code>
+     */
     public long getSendTimestamp() {
       return sendTimestamp_;
     }
-    
+
     // optional int64 start_timestamp = 2;
     public static final int START_TIMESTAMP_FIELD_NUMBER = 2;
     private long startTimestamp_;
+    /**
+     * <code>optional int64 start_timestamp = 2;</code>
+     */
     public boolean hasStartTimestamp() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>optional int64 start_timestamp = 2;</code>
+     */
     public long getStartTimestamp() {
       return startTimestamp_;
     }
-    
+
     private void initFields() {
       sendTimestamp_ = 0L;
       startTimestamp_ = 0L;
@@ -837,11 +1201,11 @@ public final class CanalPacket {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -853,12 +1217,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -872,94 +1236,83 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.HeartBeat}
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.HeartBeatOrBuilder {
@@ -967,18 +1320,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.class, com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -989,7 +1345,7 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         sendTimestamp_ = 0L;
@@ -998,20 +1354,20 @@ public final class CanalPacket {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_HeartBeat_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat build() {
         com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat result = buildPartial();
         if (!result.isInitialized()) {
@@ -1019,17 +1375,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat result = new com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat(this);
         int from_bitField0_ = bitField0_;
@@ -1046,7 +1392,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat)other);
@@ -1055,7 +1401,7 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.getDefaultInstance()) return this;
         if (other.hasSendTimestamp()) {
@@ -1067,203 +1413,367 @@ public final class CanalPacket {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              sendTimestamp_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              startTimestamp_ = input.readInt64();
-              break;
-            }
+        com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional int64 send_timestamp = 1;
       private long sendTimestamp_ ;
+      /**
+       * <code>optional int64 send_timestamp = 1;</code>
+       */
       public boolean hasSendTimestamp() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional int64 send_timestamp = 1;</code>
+       */
       public long getSendTimestamp() {
         return sendTimestamp_;
       }
+      /**
+       * <code>optional int64 send_timestamp = 1;</code>
+       */
       public Builder setSendTimestamp(long value) {
         bitField0_ |= 0x00000001;
         sendTimestamp_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 send_timestamp = 1;</code>
+       */
       public Builder clearSendTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000001);
         sendTimestamp_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // optional int64 start_timestamp = 2;
       private long startTimestamp_ ;
+      /**
+       * <code>optional int64 start_timestamp = 2;</code>
+       */
       public boolean hasStartTimestamp() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional int64 start_timestamp = 2;</code>
+       */
       public long getStartTimestamp() {
         return startTimestamp_;
       }
+      /**
+       * <code>optional int64 start_timestamp = 2;</code>
+       */
       public Builder setStartTimestamp(long value) {
         bitField0_ |= 0x00000002;
         startTimestamp_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 start_timestamp = 2;</code>
+       */
       public Builder clearStartTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000002);
         startTimestamp_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.HeartBeat)
     }
-    
+
     static {
       defaultInstance = new HeartBeat(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.HeartBeat)
   }
-  
+
   public interface HandshakeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string communication_encoding = 1 [default = "utf8"];
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
     boolean hasCommunicationEncoding();
-    String getCommunicationEncoding();
-    
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
+    java.lang.String getCommunicationEncoding();
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
+    com.google.protobuf.ByteString
+        getCommunicationEncodingBytes();
+
     // optional bytes seeds = 2;
+    /**
+     * <code>optional bytes seeds = 2;</code>
+     */
     boolean hasSeeds();
+    /**
+     * <code>optional bytes seeds = 2;</code>
+     */
     com.google.protobuf.ByteString getSeeds();
-    
+
     // repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     java.util.List<com.alibaba.otter.canal.protocol.CanalPacket.Compression> getSupportedCompressionsList();
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     int getSupportedCompressionsCount();
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     com.alibaba.otter.canal.protocol.CanalPacket.Compression getSupportedCompressions(int index);
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Handshake}
+   */
   public static final class Handshake extends
       com.google.protobuf.GeneratedMessage
       implements HandshakeOrBuilder {
     // Use Handshake.newBuilder() to construct.
-    private Handshake(Builder builder) {
+    private Handshake(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Handshake(boolean noInit) {}
-    
+    private Handshake(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Handshake defaultInstance;
     public static Handshake getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Handshake getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Handshake(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              communicationEncoding_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              seeds_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              com.alibaba.otter.canal.protocol.CanalPacket.Compression value = com.alibaba.otter.canal.protocol.CanalPacket.Compression.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  supportedCompressions_ = new java.util.ArrayList<com.alibaba.otter.canal.protocol.CanalPacket.Compression>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                supportedCompressions_.add(value);
+              }
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                com.alibaba.otter.canal.protocol.CanalPacket.Compression value = com.alibaba.otter.canal.protocol.CanalPacket.Compression.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(3, rawValue);
+                } else {
+                  if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    supportedCompressions_ = new java.util.ArrayList<com.alibaba.otter.canal.protocol.CanalPacket.Compression>();
+                    mutable_bitField0_ |= 0x00000004;
+                  }
+                  supportedCompressions_.add(value);
+                }
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          supportedCompressions_ = java.util.Collections.unmodifiableList(supportedCompressions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Handshake.class, com.alibaba.otter.canal.protocol.CanalPacket.Handshake.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Handshake> PARSER =
+        new com.google.protobuf.AbstractParser<Handshake>() {
+      public Handshake parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Handshake(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Handshake> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional string communication_encoding = 1 [default = "utf8"];
     public static final int COMMUNICATION_ENCODING_FIELD_NUMBER = 1;
     private java.lang.Object communicationEncoding_;
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
     public boolean hasCommunicationEncoding() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getCommunicationEncoding() {
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
+    public java.lang.String getCommunicationEncoding() {
       java.lang.Object ref = communicationEncoding_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           communicationEncoding_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getCommunicationEncodingBytes() {
+    /**
+     * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+     */
+    public com.google.protobuf.ByteString
+        getCommunicationEncodingBytes() {
       java.lang.Object ref = communicationEncoding_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         communicationEncoding_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional bytes seeds = 2;
     public static final int SEEDS_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString seeds_;
+    /**
+     * <code>optional bytes seeds = 2;</code>
+     */
     public boolean hasSeeds() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>optional bytes seeds = 2;</code>
+     */
     public com.google.protobuf.ByteString getSeeds() {
       return seeds_;
     }
-    
+
     // repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;
     public static final int SUPPORTED_COMPRESSIONS_FIELD_NUMBER = 3;
     private java.util.List<com.alibaba.otter.canal.protocol.CanalPacket.Compression> supportedCompressions_;
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     public java.util.List<com.alibaba.otter.canal.protocol.CanalPacket.Compression> getSupportedCompressionsList() {
       return supportedCompressions_;
     }
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     public int getSupportedCompressionsCount() {
       return supportedCompressions_.size();
     }
+    /**
+     * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+     */
     public com.alibaba.otter.canal.protocol.CanalPacket.Compression getSupportedCompressions(int index) {
       return supportedCompressions_.get(index);
     }
-    
+
     private void initFields() {
       communicationEncoding_ = "utf8";
       seeds_ = com.google.protobuf.ByteString.EMPTY;
@@ -1273,11 +1783,11 @@ public final class CanalPacket {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -1292,12 +1802,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1320,94 +1830,83 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Handshake parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Handshake prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Handshake}
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.HandshakeOrBuilder {
@@ -1415,18 +1914,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Handshake.class, com.alibaba.otter.canal.protocol.CanalPacket.Handshake.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Handshake.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1437,7 +1939,7 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         communicationEncoding_ = "utf8";
@@ -1448,20 +1950,20 @@ public final class CanalPacket {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Handshake.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Handshake_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Handshake getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.Handshake.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Handshake build() {
         com.alibaba.otter.canal.protocol.CanalPacket.Handshake result = buildPartial();
         if (!result.isInitialized()) {
@@ -1469,17 +1971,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Handshake buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Handshake result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Handshake buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.Handshake result = new com.alibaba.otter.canal.protocol.CanalPacket.Handshake(this);
         int from_bitField0_ = bitField0_;
@@ -1501,7 +1993,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Handshake) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Handshake)other);
@@ -1510,11 +2002,13 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Handshake other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.Handshake.getDefaultInstance()) return this;
         if (other.hasCommunicationEncoding()) {
-          setCommunicationEncoding(other.getCommunicationEncoding());
+          bitField0_ |= 0x00000001;
+          communicationEncoding_ = other.communicationEncoding_;
+          onChanged();
         }
         if (other.hasSeeds()) {
           setSeeds(other.getSeeds());
@@ -1532,91 +2026,73 @@ public final class CanalPacket {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              communicationEncoding_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              seeds_ = input.readBytes();
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-              com.alibaba.otter.canal.protocol.CanalPacket.Compression value = com.alibaba.otter.canal.protocol.CanalPacket.Compression.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(3, rawValue);
-              } else {
-                addSupportedCompressions(value);
-              }
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                com.alibaba.otter.canal.protocol.CanalPacket.Compression value = com.alibaba.otter.canal.protocol.CanalPacket.Compression.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(3, rawValue);
-                } else {
-                  addSupportedCompressions(value);
-                }
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
+        com.alibaba.otter.canal.protocol.CanalPacket.Handshake parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Handshake) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional string communication_encoding = 1 [default = "utf8"];
       private java.lang.Object communicationEncoding_ = "utf8";
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
       public boolean hasCommunicationEncoding() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getCommunicationEncoding() {
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
+      public java.lang.String getCommunicationEncoding() {
         java.lang.Object ref = communicationEncoding_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           communicationEncoding_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setCommunicationEncoding(String value) {
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
+      public com.google.protobuf.ByteString
+          getCommunicationEncodingBytes() {
+        java.lang.Object ref = communicationEncoding_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          communicationEncoding_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
+      public Builder setCommunicationEncoding(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1625,26 +2101,46 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
       public Builder clearCommunicationEncoding() {
         bitField0_ = (bitField0_ & ~0x00000001);
         communicationEncoding_ = getDefaultInstance().getCommunicationEncoding();
         onChanged();
         return this;
       }
-      void setCommunicationEncoding(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string communication_encoding = 1 [default = "utf8"];</code>
+       */
+      public Builder setCommunicationEncodingBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         communicationEncoding_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional bytes seeds = 2;
       private com.google.protobuf.ByteString seeds_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes seeds = 2;</code>
+       */
       public boolean hasSeeds() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional bytes seeds = 2;</code>
+       */
       public com.google.protobuf.ByteString getSeeds() {
         return seeds_;
       }
+      /**
+       * <code>optional bytes seeds = 2;</code>
+       */
       public Builder setSeeds(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -1654,13 +2150,16 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional bytes seeds = 2;</code>
+       */
       public Builder clearSeeds() {
         bitField0_ = (bitField0_ & ~0x00000002);
         seeds_ = getDefaultInstance().getSeeds();
         onChanged();
         return this;
       }
-      
+
       // repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;
       private java.util.List<com.alibaba.otter.canal.protocol.CanalPacket.Compression> supportedCompressions_ =
         java.util.Collections.emptyList();
@@ -1670,15 +2169,27 @@ public final class CanalPacket {
           bitField0_ |= 0x00000004;
         }
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public java.util.List<com.alibaba.otter.canal.protocol.CanalPacket.Compression> getSupportedCompressionsList() {
         return java.util.Collections.unmodifiableList(supportedCompressions_);
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public int getSupportedCompressionsCount() {
         return supportedCompressions_.size();
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public com.alibaba.otter.canal.protocol.CanalPacket.Compression getSupportedCompressions(int index) {
         return supportedCompressions_.get(index);
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public Builder setSupportedCompressions(
           int index, com.alibaba.otter.canal.protocol.CanalPacket.Compression value) {
         if (value == null) {
@@ -1689,6 +2200,9 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public Builder addSupportedCompressions(com.alibaba.otter.canal.protocol.CanalPacket.Compression value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1698,6 +2212,9 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public Builder addAllSupportedCompressions(
           java.lang.Iterable<? extends com.alibaba.otter.canal.protocol.CanalPacket.Compression> values) {
         ensureSupportedCompressionsIsMutable();
@@ -1705,621 +2222,206 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated .com.alibaba.otter.canal.protocol.Compression supported_compressions = 3;</code>
+       */
       public Builder clearSupportedCompressions() {
         supportedCompressions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Handshake)
     }
-    
+
     static {
       defaultInstance = new Handshake(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Handshake)
   }
-  
+
   public interface ClientAuthOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string username = 1;
+    /**
+     * <code>optional string username = 1;</code>
+     */
     boolean hasUsername();
-    String getUsername();
-    
+    /**
+     * <code>optional string username = 1;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>optional string username = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
     // optional bytes password = 2;
+    /**
+     * <code>optional bytes password = 2;</code>
+     *
+     * <pre>
+     * hashed password with seeds from Handshake message
+     * </pre>
+     */
     boolean hasPassword();
+    /**
+     * <code>optional bytes password = 2;</code>
+     *
+     * <pre>
+     * hashed password with seeds from Handshake message
+     * </pre>
+     */
     com.google.protobuf.ByteString getPassword();
-    
+
     // optional int32 net_read_timeout = 3 [default = 0];
+    /**
+     * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
     boolean hasNetReadTimeout();
+    /**
+     * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
     int getNetReadTimeout();
-    
+
     // optional int32 net_write_timeout = 4 [default = 0];
+    /**
+     * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
     boolean hasNetWriteTimeout();
+    /**
+     * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
     int getNetWriteTimeout();
-    
+
     // optional string destination = 5;
+    /**
+     * <code>optional string destination = 5;</code>
+     */
     boolean hasDestination();
-    String getDestination();
-    
+    /**
+     * <code>optional string destination = 5;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
     // optional string client_id = 6;
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
     boolean hasClientId();
-    String getClientId();
-    
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
     // optional string filter = 7;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
     boolean hasFilter();
-    String getFilter();
-    
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    java.lang.String getFilter();
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes();
+
     // optional int64 start_timestamp = 8;
+    /**
+     * <code>optional int64 start_timestamp = 8;</code>
+     */
     boolean hasStartTimestamp();
+    /**
+     * <code>optional int64 start_timestamp = 8;</code>
+     */
     long getStartTimestamp();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientAuth}
+   *
+   * <pre>
+   * client authentication
+   * </pre>
+   */
   public static final class ClientAuth extends
       com.google.protobuf.GeneratedMessage
       implements ClientAuthOrBuilder {
     // Use ClientAuth.newBuilder() to construct.
-    private ClientAuth(Builder builder) {
+    private ClientAuth(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ClientAuth(boolean noInit) {}
-    
+    private ClientAuth(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final ClientAuth defaultInstance;
     public static ClientAuth getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public ClientAuth getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional string username = 1;
-    public static final int USERNAME_FIELD_NUMBER = 1;
-    private java.lang.Object username_;
-    public boolean hasUsername() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          username_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional bytes password = 2;
-    public static final int PASSWORD_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString password_;
-    public boolean hasPassword() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public com.google.protobuf.ByteString getPassword() {
-      return password_;
-    }
-    
-    // optional int32 net_read_timeout = 3 [default = 0];
-    public static final int NET_READ_TIMEOUT_FIELD_NUMBER = 3;
-    private int netReadTimeout_;
-    public boolean hasNetReadTimeout() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getNetReadTimeout() {
-      return netReadTimeout_;
-    }
-    
-    // optional int32 net_write_timeout = 4 [default = 0];
-    public static final int NET_WRITE_TIMEOUT_FIELD_NUMBER = 4;
-    private int netWriteTimeout_;
-    public boolean hasNetWriteTimeout() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public int getNetWriteTimeout() {
-      return netWriteTimeout_;
-    }
-    
-    // optional string destination = 5;
-    public static final int DESTINATION_FIELD_NUMBER = 5;
-    private java.lang.Object destination_;
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          destination_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string client_id = 6;
-    public static final int CLIENT_ID_FIELD_NUMBER = 6;
-    private java.lang.Object clientId_;
-    public boolean hasClientId() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          clientId_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string filter = 7;
-    public static final int FILTER_FIELD_NUMBER = 7;
-    private java.lang.Object filter_;
-    public boolean hasFilter() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    public String getFilter() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          filter_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getFilterBytes() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        filter_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional int64 start_timestamp = 8;
-    public static final int START_TIMESTAMP_FIELD_NUMBER = 8;
-    private long startTimestamp_;
-    public boolean hasStartTimestamp() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public long getStartTimestamp() {
-      return startTimestamp_;
-    }
-    
-    private void initFields() {
-      username_ = "";
-      password_ = com.google.protobuf.ByteString.EMPTY;
-      netReadTimeout_ = 0;
-      netWriteTimeout_ = 0;
-      destination_ = "";
-      clientId_ = "";
-      filter_ = "";
-      startTimestamp_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getUsernameBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, password_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, netReadTimeout_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt32(4, netWriteTimeout_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getFilterBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeInt64(8, startTimestamp_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getUsernameBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, password_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, netReadTimeout_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, netWriteTimeout_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getFilterBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, startTimestamp_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+    private ClientAuth(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientAuthOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_fieldAccessorTable;
-      }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        username_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        password_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        netReadTimeout_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        netWriteTimeout_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        clientId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
-        filter_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        startTimestamp_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.getDescriptor();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.getDefaultInstance();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.username_ = username_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.password_ = password_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.netReadTimeout_ = netReadTimeout_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.netWriteTimeout_ = netWriteTimeout_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.clientId_ = clientId_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.filter_ = filter_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.startTimestamp_ = startTimestamp_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.getDefaultInstance()) return this;
-        if (other.hasUsername()) {
-          setUsername(other.getUsername());
-        }
-        if (other.hasPassword()) {
-          setPassword(other.getPassword());
-        }
-        if (other.hasNetReadTimeout()) {
-          setNetReadTimeout(other.getNetReadTimeout());
-        }
-        if (other.hasNetWriteTimeout()) {
-          setNetWriteTimeout(other.getNetWriteTimeout());
-        }
-        if (other.hasDestination()) {
-          setDestination(other.getDestination());
-        }
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
-        }
-        if (other.hasFilter()) {
-          setFilter(other.getFilter());
-        }
-        if (other.hasStartTimestamp()) {
-          setStartTimestamp(other.getStartTimestamp());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -2365,26 +2467,705 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ClientAuth> PARSER =
+        new com.google.protobuf.AbstractParser<ClientAuth>() {
+      public ClientAuth parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientAuth(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientAuth> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string username = 1;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private java.lang.Object username_;
+    /**
+     * <code>optional string username = 1;</code>
+     */
+    public boolean hasUsername() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string username = 1;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          username_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string username = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional bytes password = 2;
+    public static final int PASSWORD_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString password_;
+    /**
+     * <code>optional bytes password = 2;</code>
+     *
+     * <pre>
+     * hashed password with seeds from Handshake message
+     * </pre>
+     */
+    public boolean hasPassword() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bytes password = 2;</code>
+     *
+     * <pre>
+     * hashed password with seeds from Handshake message
+     * </pre>
+     */
+    public com.google.protobuf.ByteString getPassword() {
+      return password_;
+    }
+
+    // optional int32 net_read_timeout = 3 [default = 0];
+    public static final int NET_READ_TIMEOUT_FIELD_NUMBER = 3;
+    private int netReadTimeout_;
+    /**
+     * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
+    public boolean hasNetReadTimeout() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
+    public int getNetReadTimeout() {
+      return netReadTimeout_;
+    }
+
+    // optional int32 net_write_timeout = 4 [default = 0];
+    public static final int NET_WRITE_TIMEOUT_FIELD_NUMBER = 4;
+    private int netWriteTimeout_;
+    /**
+     * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
+    public boolean hasNetWriteTimeout() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+     *
+     * <pre>
+     * in seconds
+     * </pre>
+     */
+    public int getNetWriteTimeout() {
+      return netWriteTimeout_;
+    }
+
+    // optional string destination = 5;
+    public static final int DESTINATION_FIELD_NUMBER = 5;
+    private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 5;</code>
+     */
+    public boolean hasDestination() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string destination = 5;</code>
+     */
+    public java.lang.String getDestination() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          destination_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string destination = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        destination_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string client_id = 6;
+    public static final int CLIENT_ID_FIELD_NUMBER = 6;
+    private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_id = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string filter = 7;
+    public static final int FILTER_FIELD_NUMBER = 7;
+    private java.lang.Object filter_;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          filter_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 start_timestamp = 8;
+    public static final int START_TIMESTAMP_FIELD_NUMBER = 8;
+    private long startTimestamp_;
+    /**
+     * <code>optional int64 start_timestamp = 8;</code>
+     */
+    public boolean hasStartTimestamp() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional int64 start_timestamp = 8;</code>
+     */
+    public long getStartTimestamp() {
+      return startTimestamp_;
+    }
+
+    private void initFields() {
+      username_ = "";
+      password_ = com.google.protobuf.ByteString.EMPTY;
+      netReadTimeout_ = 0;
+      netWriteTimeout_ = 0;
+      destination_ = "";
+      clientId_ = "";
+      filter_ = "";
+      startTimestamp_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getUsernameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, password_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, netReadTimeout_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, netWriteTimeout_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getFilterBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeInt64(8, startTimestamp_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getUsernameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, password_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, netReadTimeout_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, netWriteTimeout_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getFilterBytes());
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, startTimestamp_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientAuth}
+     *
+     * <pre>
+     * client authentication
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientAuthOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.Builder.class);
+      }
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        username_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        password_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        netReadTimeout_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        netWriteTimeout_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        destination_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        clientId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        filter_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        startTimestamp_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.getDefaultInstance();
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.username_ = username_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.password_ = password_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.netReadTimeout_ = netReadTimeout_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.netWriteTimeout_ = netWriteTimeout_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.destination_ = destination_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.filter_ = filter_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.startTimestamp_ = startTimestamp_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.getDefaultInstance()) return this;
+        if (other.hasUsername()) {
+          bitField0_ |= 0x00000001;
+          username_ = other.username_;
+          onChanged();
+        }
+        if (other.hasPassword()) {
+          setPassword(other.getPassword());
+        }
+        if (other.hasNetReadTimeout()) {
+          setNetReadTimeout(other.getNetReadTimeout());
+        }
+        if (other.hasNetWriteTimeout()) {
+          setNetWriteTimeout(other.getNetWriteTimeout());
+        }
+        if (other.hasDestination()) {
+          bitField0_ |= 0x00000010;
+          destination_ = other.destination_;
+          onChanged();
+        }
+        if (other.hasClientId()) {
+          bitField0_ |= 0x00000020;
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (other.hasFilter()) {
+          bitField0_ |= 0x00000040;
+          filter_ = other.filter_;
+          onChanged();
+        }
+        if (other.hasStartTimestamp()) {
+          setStartTimestamp(other.getStartTimestamp());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // optional string username = 1;
       private java.lang.Object username_ = "";
+      /**
+       * <code>optional string username = 1;</code>
+       */
       public boolean hasUsername() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getUsername() {
+      /**
+       * <code>optional string username = 1;</code>
+       */
+      public java.lang.String getUsername() {
         java.lang.Object ref = username_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           username_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setUsername(String value) {
+      /**
+       * <code>optional string username = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string username = 1;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2393,26 +3174,58 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string username = 1;</code>
+       */
       public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000001);
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
-      void setUsername(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string username = 1;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         username_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional bytes password = 2;
       private com.google.protobuf.ByteString password_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes password = 2;</code>
+       *
+       * <pre>
+       * hashed password with seeds from Handshake message
+       * </pre>
+       */
       public boolean hasPassword() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional bytes password = 2;</code>
+       *
+       * <pre>
+       * hashed password with seeds from Handshake message
+       * </pre>
+       */
       public com.google.protobuf.ByteString getPassword() {
         return password_;
       }
+      /**
+       * <code>optional bytes password = 2;</code>
+       *
+       * <pre>
+       * hashed password with seeds from Handshake message
+       * </pre>
+       */
       public Builder setPassword(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -2422,71 +3235,161 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional bytes password = 2;</code>
+       *
+       * <pre>
+       * hashed password with seeds from Handshake message
+       * </pre>
+       */
       public Builder clearPassword() {
         bitField0_ = (bitField0_ & ~0x00000002);
         password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
       }
-      
+
       // optional int32 net_read_timeout = 3 [default = 0];
       private int netReadTimeout_ ;
+      /**
+       * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public boolean hasNetReadTimeout() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public int getNetReadTimeout() {
         return netReadTimeout_;
       }
+      /**
+       * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public Builder setNetReadTimeout(int value) {
         bitField0_ |= 0x00000004;
         netReadTimeout_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 net_read_timeout = 3 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public Builder clearNetReadTimeout() {
         bitField0_ = (bitField0_ & ~0x00000004);
         netReadTimeout_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional int32 net_write_timeout = 4 [default = 0];
       private int netWriteTimeout_ ;
+      /**
+       * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public boolean hasNetWriteTimeout() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public int getNetWriteTimeout() {
         return netWriteTimeout_;
       }
+      /**
+       * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public Builder setNetWriteTimeout(int value) {
         bitField0_ |= 0x00000008;
         netWriteTimeout_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 net_write_timeout = 4 [default = 0];</code>
+       *
+       * <pre>
+       * in seconds
+       * </pre>
+       */
       public Builder clearNetWriteTimeout() {
         bitField0_ = (bitField0_ & ~0x00000008);
         netWriteTimeout_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional string destination = 5;
       private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 5;</code>
+       */
       public boolean hasDestination() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      public String getDestination() {
+      /**
+       * <code>optional string destination = 5;</code>
+       */
+      public java.lang.String getDestination() {
         java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           destination_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setDestination(String value) {
+      /**
+       * <code>optional string destination = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 5;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2495,34 +3398,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string destination = 5;</code>
+       */
       public Builder clearDestination() {
         bitField0_ = (bitField0_ & ~0x00000010);
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000010;
+      /**
+       * <code>optional string destination = 5;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
         destination_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string client_id = 6;
       private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
       public boolean hasClientId() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
-      public String getClientId() {
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
+      public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           clientId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClientId(String value) {
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2531,34 +3472,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
       public Builder clearClientId() {
         bitField0_ = (bitField0_ & ~0x00000020);
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000020;
+      /**
+       * <code>optional string client_id = 6;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
         clientId_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string filter = 7;
       private java.lang.Object filter_ = "";
+      /**
+       * <code>optional string filter = 7;</code>
+       */
       public boolean hasFilter() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
-      public String getFilter() {
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public java.lang.String getFilter() {
         java.lang.Object ref = filter_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           filter_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setFilter(String value) {
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilter(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2567,132 +3546,285 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
       public Builder clearFilter() {
         bitField0_ = (bitField0_ & ~0x00000040);
         filter_ = getDefaultInstance().getFilter();
         onChanged();
         return this;
       }
-      void setFilter(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000040;
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
         filter_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional int64 start_timestamp = 8;
       private long startTimestamp_ ;
+      /**
+       * <code>optional int64 start_timestamp = 8;</code>
+       */
       public boolean hasStartTimestamp() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
+      /**
+       * <code>optional int64 start_timestamp = 8;</code>
+       */
       public long getStartTimestamp() {
         return startTimestamp_;
       }
+      /**
+       * <code>optional int64 start_timestamp = 8;</code>
+       */
       public Builder setStartTimestamp(long value) {
         bitField0_ |= 0x00000080;
         startTimestamp_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 start_timestamp = 8;</code>
+       */
       public Builder clearStartTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000080);
         startTimestamp_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.ClientAuth)
     }
-    
+
     static {
       defaultInstance = new ClientAuth(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.ClientAuth)
   }
-  
+
   public interface AckOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional int32 error_code = 1 [default = 0];
+    /**
+     * <code>optional int32 error_code = 1 [default = 0];</code>
+     */
     boolean hasErrorCode();
+    /**
+     * <code>optional int32 error_code = 1 [default = 0];</code>
+     */
     int getErrorCode();
-    
+
     // optional string error_message = 2;
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
     boolean hasErrorMessage();
-    String getErrorMessage();
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
+    java.lang.String getErrorMessage();
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getErrorMessageBytes();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Ack}
+   */
   public static final class Ack extends
       com.google.protobuf.GeneratedMessage
       implements AckOrBuilder {
     // Use Ack.newBuilder() to construct.
-    private Ack(Builder builder) {
+    private Ack(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Ack(boolean noInit) {}
-    
+    private Ack(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Ack defaultInstance;
     public static Ack getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Ack getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Ack(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              errorCode_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              errorMessage_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Ack.class, com.alibaba.otter.canal.protocol.CanalPacket.Ack.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Ack> PARSER =
+        new com.google.protobuf.AbstractParser<Ack>() {
+      public Ack parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Ack(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Ack> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional int32 error_code = 1 [default = 0];
     public static final int ERROR_CODE_FIELD_NUMBER = 1;
     private int errorCode_;
+    /**
+     * <code>optional int32 error_code = 1 [default = 0];</code>
+     */
     public boolean hasErrorCode() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>optional int32 error_code = 1 [default = 0];</code>
+     */
     public int getErrorCode() {
       return errorCode_;
     }
-    
+
     // optional string error_message = 2;
     public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
     private java.lang.Object errorMessage_;
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
     public boolean hasErrorMessage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getErrorMessage() {
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
+    public java.lang.String getErrorMessage() {
       java.lang.Object ref = errorMessage_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           errorMessage_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getErrorMessageBytes() {
+    /**
+     * <code>optional string error_message = 2;</code>
+     *
+     * <pre>
+     * if something like compression is not supported, erorr_message will tell about it.
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getErrorMessageBytes() {
       java.lang.Object ref = errorMessage_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         errorMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       errorCode_ = 0;
       errorMessage_ = "";
@@ -2701,11 +3833,11 @@ public final class CanalPacket {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -2717,12 +3849,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2736,94 +3868,83 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Ack parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Ack prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Ack}
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.AckOrBuilder {
@@ -2831,18 +3952,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Ack.class, com.alibaba.otter.canal.protocol.CanalPacket.Ack.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Ack.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2853,7 +3977,7 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         errorCode_ = 0;
@@ -2862,20 +3986,20 @@ public final class CanalPacket {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Ack.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Ack_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Ack getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.Ack.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Ack build() {
         com.alibaba.otter.canal.protocol.CanalPacket.Ack result = buildPartial();
         if (!result.isInitialized()) {
@@ -2883,17 +4007,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Ack buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Ack result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Ack buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.Ack result = new com.alibaba.otter.canal.protocol.CanalPacket.Ack(this);
         int from_bitField0_ = bitField0_;
@@ -2910,7 +4024,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Ack) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Ack)other);
@@ -2919,99 +4033,136 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Ack other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.Ack.getDefaultInstance()) return this;
         if (other.hasErrorCode()) {
           setErrorCode(other.getErrorCode());
         }
         if (other.hasErrorMessage()) {
-          setErrorMessage(other.getErrorMessage());
+          bitField0_ |= 0x00000002;
+          errorMessage_ = other.errorMessage_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              errorCode_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              errorMessage_ = input.readBytes();
-              break;
-            }
+        com.alibaba.otter.canal.protocol.CanalPacket.Ack parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Ack) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional int32 error_code = 1 [default = 0];
       private int errorCode_ ;
+      /**
+       * <code>optional int32 error_code = 1 [default = 0];</code>
+       */
       public boolean hasErrorCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional int32 error_code = 1 [default = 0];</code>
+       */
       public int getErrorCode() {
         return errorCode_;
       }
+      /**
+       * <code>optional int32 error_code = 1 [default = 0];</code>
+       */
       public Builder setErrorCode(int value) {
         bitField0_ |= 0x00000001;
         errorCode_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 error_code = 1 [default = 0];</code>
+       */
       public Builder clearErrorCode() {
         bitField0_ = (bitField0_ & ~0x00000001);
         errorCode_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional string error_message = 2;
       private java.lang.Object errorMessage_ = "";
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
       public boolean hasErrorMessage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getErrorMessage() {
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
+      public java.lang.String getErrorMessage() {
         java.lang.Object ref = errorMessage_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           errorMessage_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setErrorMessage(String value) {
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getErrorMessageBytes() {
+        java.lang.Object ref = errorMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
+      public Builder setErrorMessage(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3020,427 +4171,139 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
       public Builder clearErrorMessage() {
         bitField0_ = (bitField0_ & ~0x00000002);
         errorMessage_ = getDefaultInstance().getErrorMessage();
         onChanged();
         return this;
       }
-      void setErrorMessage(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string error_message = 2;</code>
+       *
+       * <pre>
+       * if something like compression is not supported, erorr_message will tell about it.
+       * </pre>
+       */
+      public Builder setErrorMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         errorMessage_ = value;
         onChanged();
+        return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Ack)
     }
-    
+
     static {
       defaultInstance = new Ack(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Ack)
   }
-  
+
   public interface ClientAckOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string destination = 1;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
     boolean hasDestination();
-    String getDestination();
-    
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
     // optional string client_id = 2;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
     boolean hasClientId();
-    String getClientId();
-    
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
     // optional int64 batch_id = 3;
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
     boolean hasBatchId();
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
     long getBatchId();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientAck}
+   */
   public static final class ClientAck extends
       com.google.protobuf.GeneratedMessage
       implements ClientAckOrBuilder {
     // Use ClientAck.newBuilder() to construct.
-    private ClientAck(Builder builder) {
+    private ClientAck(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private ClientAck(boolean noInit) {}
-    
+    private ClientAck(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final ClientAck defaultInstance;
     public static ClientAck getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public ClientAck getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional string destination = 1;
-    public static final int DESTINATION_FIELD_NUMBER = 1;
-    private java.lang.Object destination_;
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          destination_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string client_id = 2;
-    public static final int CLIENT_ID_FIELD_NUMBER = 2;
-    private java.lang.Object clientId_;
-    public boolean hasClientId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          clientId_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional int64 batch_id = 3;
-    public static final int BATCH_ID_FIELD_NUMBER = 3;
-    private long batchId_;
-    public boolean hasBatchId() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public long getBatchId() {
-      return batchId_;
-    }
-    
-    private void initFields() {
-      destination_ = "";
-      clientId_ = "";
-      batchId_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, batchId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, batchId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+    private ClientAck(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientAck prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientAckOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_fieldAccessorTable;
-      }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        clientId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        batchId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.getDescriptor();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.getDefaultInstance();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.ClientAck buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientAck(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.clientId_ = clientId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.batchId_ = batchId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientAck) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientAck)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientAck other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.getDefaultInstance()) return this;
-        if (other.hasDestination()) {
-          setDestination(other.getDestination());
-        }
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
-        }
-        if (other.hasBatchId()) {
-          setBatchId(other.getBatchId());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -3461,26 +4324,454 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ClientAck> PARSER =
+        new com.google.protobuf.AbstractParser<ClientAck>() {
+      public ClientAck parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientAck(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientAck> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string destination = 1;
+    public static final int DESTINATION_FIELD_NUMBER = 1;
+    private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public boolean hasDestination() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public java.lang.String getDestination() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          destination_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        destination_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string client_id = 2;
+    public static final int CLIENT_ID_FIELD_NUMBER = 2;
+    private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 batch_id = 3;
+    public static final int BATCH_ID_FIELD_NUMBER = 3;
+    private long batchId_;
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    public boolean hasBatchId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    public long getBatchId() {
+      return batchId_;
+    }
+
+    private void initFields() {
+      destination_ = "";
+      clientId_ = "";
+      batchId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, batchId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, batchId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientAck prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientAck}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientAckOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.Builder.class);
+      }
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        destination_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        batchId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.getDefaultInstance();
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientAck buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientAck(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.destination_ = destination_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.batchId_ = batchId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientAck) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientAck)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientAck other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.getDefaultInstance()) return this;
+        if (other.hasDestination()) {
+          bitField0_ |= 0x00000001;
+          destination_ = other.destination_;
+          onChanged();
+        }
+        if (other.hasClientId()) {
+          bitField0_ |= 0x00000002;
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (other.hasBatchId()) {
+          setBatchId(other.getBatchId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientAck parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.ClientAck) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // optional string destination = 1;
       private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public boolean hasDestination() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getDestination() {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public java.lang.String getDestination() {
         java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           destination_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setDestination(String value) {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3489,34 +4780,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public Builder clearDestination() {
         bitField0_ = (bitField0_ & ~0x00000001);
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         destination_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string client_id = 2;
       private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public boolean hasClientId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getClientId() {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           clientId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClientId(String value) {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3525,190 +4854,360 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public Builder clearClientId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         clientId_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional int64 batch_id = 3;
       private long batchId_ ;
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public boolean hasBatchId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public long getBatchId() {
         return batchId_;
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public Builder setBatchId(long value) {
         bitField0_ |= 0x00000004;
         batchId_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public Builder clearBatchId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         batchId_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.ClientAck)
     }
-    
+
     static {
       defaultInstance = new ClientAck(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.ClientAck)
   }
-  
+
   public interface SubOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string destination = 1;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
     boolean hasDestination();
-    String getDestination();
-    
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
     // optional string client_id = 2;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
     boolean hasClientId();
-    String getClientId();
-    
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
     // optional string filter = 7;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
     boolean hasFilter();
-    String getFilter();
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    java.lang.String getFilter();
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Sub}
+   *
+   * <pre>
+   * subscription
+   * </pre>
+   */
   public static final class Sub extends
       com.google.protobuf.GeneratedMessage
       implements SubOrBuilder {
     // Use Sub.newBuilder() to construct.
-    private Sub(Builder builder) {
+    private Sub(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Sub(boolean noInit) {}
-    
+    private Sub(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Sub defaultInstance;
     public static Sub getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Sub getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Sub(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              destination_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              clientId_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000004;
+              filter_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Sub.class, com.alibaba.otter.canal.protocol.CanalPacket.Sub.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Sub> PARSER =
+        new com.google.protobuf.AbstractParser<Sub>() {
+      public Sub parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Sub(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Sub> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional string destination = 1;
     public static final int DESTINATION_FIELD_NUMBER = 1;
     private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
     public boolean hasDestination() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getDestination() {
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public java.lang.String getDestination() {
       java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           destination_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getDestinationBytes() {
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
       java.lang.Object ref = destination_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         destination_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional string client_id = 2;
     public static final int CLIENT_ID_FIELD_NUMBER = 2;
     private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
     public boolean hasClientId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getClientId() {
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           clientId_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getClientIdBytes() {
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
       java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         clientId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional string filter = 7;
     public static final int FILTER_FIELD_NUMBER = 7;
     private java.lang.Object filter_;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    public String getFilter() {
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           filter_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getFilterBytes() {
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
       java.lang.Object ref = filter_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       destination_ = "";
       clientId_ = "";
@@ -3718,11 +5217,11 @@ public final class CanalPacket {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -3737,12 +5236,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3760,94 +5259,87 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Sub parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Sub prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Sub}
+     *
+     * <pre>
+     * subscription
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.SubOrBuilder {
@@ -3855,18 +5347,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Sub.class, com.alibaba.otter.canal.protocol.CanalPacket.Sub.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Sub.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3877,7 +5372,7 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         destination_ = "";
@@ -3888,20 +5383,20 @@ public final class CanalPacket {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Sub.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Sub_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Sub getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.Sub.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Sub build() {
         com.alibaba.otter.canal.protocol.CanalPacket.Sub result = buildPartial();
         if (!result.isInitialized()) {
@@ -3909,17 +5404,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Sub buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Sub result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Sub buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.Sub result = new com.alibaba.otter.canal.protocol.CanalPacket.Sub(this);
         int from_bitField0_ = bitField0_;
@@ -3940,7 +5425,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Sub) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Sub)other);
@@ -3949,46 +5434,384 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Sub other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.Sub.getDefaultInstance()) return this;
         if (other.hasDestination()) {
-          setDestination(other.getDestination());
+          bitField0_ |= 0x00000001;
+          destination_ = other.destination_;
+          onChanged();
         }
         if (other.hasClientId()) {
-          setClientId(other.getClientId());
+          bitField0_ |= 0x00000002;
+          clientId_ = other.clientId_;
+          onChanged();
         }
         if (other.hasFilter()) {
-          setFilter(other.getFilter());
+          bitField0_ |= 0x00000004;
+          filter_ = other.filter_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        com.alibaba.otter.canal.protocol.CanalPacket.Sub parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Sub) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional string destination = 1;
+      private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public boolean hasDestination() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public java.lang.String getDestination() {
+        java.lang.Object ref = destination_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          destination_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        destination_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder clearDestination() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        destination_ = getDefaultInstance().getDestination();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        destination_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string client_id = 2;
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        clientId_ = getDefaultInstance().getClientId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional string filter = 7;
+      private java.lang.Object filter_ = "";
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public boolean hasFilter() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          filter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilter(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder clearFilter() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        filter_ = getDefaultInstance().getFilter();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Sub)
+    }
+
+    static {
+      defaultInstance = new Sub(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Sub)
+  }
+
+  public interface UnsubOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional string destination = 1;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    boolean hasDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
+    // optional string client_id = 2;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    boolean hasClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    // optional string filter = 7;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    boolean hasFilter();
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    java.lang.String getFilter();
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes();
+  }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Unsub}
+   *
+   * <pre>
+   * Unsubscription
+   * </pre>
+   */
+  public static final class Unsub extends
+      com.google.protobuf.GeneratedMessage
+      implements UnsubOrBuilder {
+    // Use Unsub.newBuilder() to construct.
+    private Unsub(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Unsub(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Unsub defaultInstance;
+    public static Unsub getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Unsub getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Unsub(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -4009,269 +5832,173 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
-      private int bitField0_;
-      
-      // optional string destination = 1;
-      private java.lang.Object destination_ = "";
-      public boolean hasDestination() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public String getDestination() {
-        java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          destination_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setDestination(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        destination_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearDestination() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        destination_ = getDefaultInstance().getDestination();
-        onChanged();
-        return this;
-      }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
-        destination_ = value;
-        onChanged();
-      }
-      
-      // optional string client_id = 2;
-      private java.lang.Object clientId_ = "";
-      public boolean hasClientId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public String getClientId() {
-        java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          clientId_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setClientId(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearClientId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        clientId_ = getDefaultInstance().getClientId();
-        onChanged();
-        return this;
-      }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
-        clientId_ = value;
-        onChanged();
-      }
-      
-      // optional string filter = 7;
-      private java.lang.Object filter_ = "";
-      public boolean hasFilter() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public String getFilter() {
-        java.lang.Object ref = filter_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          filter_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setFilter(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        filter_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearFilter() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        filter_ = getDefaultInstance().getFilter();
-        onChanged();
-        return this;
-      }
-      void setFilter(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000004;
-        filter_ = value;
-        onChanged();
-      }
-      
-      // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Sub)
     }
-    
-    static {
-      defaultInstance = new Sub(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Sub)
-  }
-  
-  public interface UnsubOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional string destination = 1;
-    boolean hasDestination();
-    String getDestination();
-    
-    // optional string client_id = 2;
-    boolean hasClientId();
-    String getClientId();
-    
-    // optional string filter = 7;
-    boolean hasFilter();
-    String getFilter();
-  }
-  public static final class Unsub extends
-      com.google.protobuf.GeneratedMessage
-      implements UnsubOrBuilder {
-    // Use Unsub.newBuilder() to construct.
-    private Unsub(Builder builder) {
-      super(builder);
-    }
-    private Unsub(boolean noInit) {}
-    
-    private static final Unsub defaultInstance;
-    public static Unsub getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public Unsub getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Unsub.class, com.alibaba.otter.canal.protocol.CanalPacket.Unsub.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Unsub> PARSER =
+        new com.google.protobuf.AbstractParser<Unsub>() {
+      public Unsub parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Unsub(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Unsub> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional string destination = 1;
     public static final int DESTINATION_FIELD_NUMBER = 1;
     private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
     public boolean hasDestination() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getDestination() {
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public java.lang.String getDestination() {
       java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           destination_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getDestinationBytes() {
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
       java.lang.Object ref = destination_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         destination_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional string client_id = 2;
     public static final int CLIENT_ID_FIELD_NUMBER = 2;
     private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
     public boolean hasClientId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getClientId() {
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           clientId_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getClientIdBytes() {
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
       java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         clientId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // optional string filter = 7;
     public static final int FILTER_FIELD_NUMBER = 7;
     private java.lang.Object filter_;
+    /**
+     * <code>optional string filter = 7;</code>
+     */
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    public String getFilter() {
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           filter_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getFilterBytes() {
+    /**
+     * <code>optional string filter = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
       java.lang.Object ref = filter_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     private void initFields() {
       destination_ = "";
       clientId_ = "";
@@ -4281,11 +6008,11 @@ public final class CanalPacket {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4300,12 +6027,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4323,94 +6050,87 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Unsub parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Unsub prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Unsub}
+     *
+     * <pre>
+     * Unsubscription
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.UnsubOrBuilder {
@@ -4418,18 +6138,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Unsub.class, com.alibaba.otter.canal.protocol.CanalPacket.Unsub.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Unsub.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4440,7 +6163,7 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         destination_ = "";
@@ -4451,20 +6174,20 @@ public final class CanalPacket {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Unsub.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Unsub_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Unsub getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.Unsub.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Unsub build() {
         com.alibaba.otter.canal.protocol.CanalPacket.Unsub result = buildPartial();
         if (!result.isInitialized()) {
@@ -4472,17 +6195,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Unsub buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Unsub result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Unsub buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.Unsub result = new com.alibaba.otter.canal.protocol.CanalPacket.Unsub(this);
         int from_bitField0_ = bitField0_;
@@ -4503,7 +6216,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Unsub) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Unsub)other);
@@ -4512,86 +6225,94 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Unsub other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.Unsub.getDefaultInstance()) return this;
         if (other.hasDestination()) {
-          setDestination(other.getDestination());
+          bitField0_ |= 0x00000001;
+          destination_ = other.destination_;
+          onChanged();
         }
         if (other.hasClientId()) {
-          setClientId(other.getClientId());
+          bitField0_ |= 0x00000002;
+          clientId_ = other.clientId_;
+          onChanged();
         }
         if (other.hasFilter()) {
-          setFilter(other.getFilter());
+          bitField0_ |= 0x00000004;
+          filter_ = other.filter_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              destination_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              clientId_ = input.readBytes();
-              break;
-            }
-            case 58: {
-              bitField0_ |= 0x00000004;
-              filter_ = input.readBytes();
-              break;
-            }
+        com.alibaba.otter.canal.protocol.CanalPacket.Unsub parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Unsub) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional string destination = 1;
       private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public boolean hasDestination() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getDestination() {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public java.lang.String getDestination() {
         java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           destination_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setDestination(String value) {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4600,34 +6321,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public Builder clearDestination() {
         bitField0_ = (bitField0_ & ~0x00000001);
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         destination_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string client_id = 2;
       private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public boolean hasClientId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getClientId() {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           clientId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClientId(String value) {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4636,34 +6395,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public Builder clearClientId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         clientId_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string filter = 7;
       private java.lang.Object filter_ = "";
+      /**
+       * <code>optional string filter = 7;</code>
+       */
       public boolean hasFilter() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      public String getFilter() {
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public java.lang.String getFilter() {
         java.lang.Object ref = filter_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           filter_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setFilter(String value) {
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilter(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4672,520 +6469,189 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string filter = 7;</code>
+       */
       public Builder clearFilter() {
         bitField0_ = (bitField0_ & ~0x00000004);
         filter_ = getDefaultInstance().getFilter();
         onChanged();
         return this;
       }
-      void setFilter(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000004;
+      /**
+       * <code>optional string filter = 7;</code>
+       */
+      public Builder setFilterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         filter_ = value;
         onChanged();
+        return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Unsub)
     }
-    
+
     static {
       defaultInstance = new Unsub(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Unsub)
   }
-  
+
   public interface GetOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string destination = 1;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
     boolean hasDestination();
-    String getDestination();
-    
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
     // optional string client_id = 2;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
     boolean hasClientId();
-    String getClientId();
-    
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
     // optional int32 fetch_size = 3;
+    /**
+     * <code>optional int32 fetch_size = 3;</code>
+     */
     boolean hasFetchSize();
+    /**
+     * <code>optional int32 fetch_size = 3;</code>
+     */
     int getFetchSize();
-    
+
     // optional int64 timeout = 4 [default = -1];
+    /**
+     * <code>optional int64 timeout = 4 [default = -1];</code>
+     *
+     * <pre>
+     * 默认-1时代表不控制
+     * </pre>
+     */
     boolean hasTimeout();
+    /**
+     * <code>optional int64 timeout = 4 [default = -1];</code>
+     *
+     * <pre>
+     * 默认-1时代表不控制
+     * </pre>
+     */
     long getTimeout();
-    
+
     // optional int32 unit = 5 [default = 2];
+    /**
+     * <code>optional int32 unit = 5 [default = 2];</code>
+     *
+     * <pre>
+     * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+     * </pre>
+     */
     boolean hasUnit();
+    /**
+     * <code>optional int32 unit = 5 [default = 2];</code>
+     *
+     * <pre>
+     * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+     * </pre>
+     */
     int getUnit();
-    
+
     // optional bool auto_ack = 6 [default = false];
+    /**
+     * <code>optional bool auto_ack = 6 [default = false];</code>
+     *
+     * <pre>
+     * 是否自动ack
+     * </pre>
+     */
     boolean hasAutoAck();
+    /**
+     * <code>optional bool auto_ack = 6 [default = false];</code>
+     *
+     * <pre>
+     * 是否自动ack
+     * </pre>
+     */
     boolean getAutoAck();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Get}
+   *
+   * <pre>
+   *  PullRequest
+   * </pre>
+   */
   public static final class Get extends
       com.google.protobuf.GeneratedMessage
       implements GetOrBuilder {
     // Use Get.newBuilder() to construct.
-    private Get(Builder builder) {
+    private Get(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Get(boolean noInit) {}
-    
+    private Get(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Get defaultInstance;
     public static Get getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Get getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional string destination = 1;
-    public static final int DESTINATION_FIELD_NUMBER = 1;
-    private java.lang.Object destination_;
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          destination_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string client_id = 2;
-    public static final int CLIENT_ID_FIELD_NUMBER = 2;
-    private java.lang.Object clientId_;
-    public boolean hasClientId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          clientId_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional int32 fetch_size = 3;
-    public static final int FETCH_SIZE_FIELD_NUMBER = 3;
-    private int fetchSize_;
-    public boolean hasFetchSize() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getFetchSize() {
-      return fetchSize_;
-    }
-    
-    // optional int64 timeout = 4 [default = -1];
-    public static final int TIMEOUT_FIELD_NUMBER = 4;
-    private long timeout_;
-    public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public long getTimeout() {
-      return timeout_;
-    }
-    
-    // optional int32 unit = 5 [default = 2];
-    public static final int UNIT_FIELD_NUMBER = 5;
-    private int unit_;
-    public boolean hasUnit() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public int getUnit() {
-      return unit_;
-    }
-    
-    // optional bool auto_ack = 6 [default = false];
-    public static final int AUTO_ACK_FIELD_NUMBER = 6;
-    private boolean autoAck_;
-    public boolean hasAutoAck() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public boolean getAutoAck() {
-      return autoAck_;
-    }
-    
-    private void initFields() {
-      destination_ = "";
-      clientId_ = "";
-      fetchSize_ = 0;
-      timeout_ = -1L;
-      unit_ = 2;
-      autoAck_ = false;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, fetchSize_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt64(4, timeout_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, unit_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBool(6, autoAck_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getDestinationBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getClientIdBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, fetchSize_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, timeout_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, unit_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, autoAck_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+    private Get(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Get prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.GetOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_fieldAccessorTable;
-      }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Get.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        clientId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fetchSize_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        timeout_ = -1L;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        unit_ = 2;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        autoAck_ = false;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Get.getDescriptor();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Get getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Get.getDefaultInstance();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Get build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Get result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Get buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Get result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Get buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Get result = new com.alibaba.otter.canal.protocol.CanalPacket.Get(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.clientId_ = clientId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.fetchSize_ = fetchSize_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.timeout_ = timeout_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.unit_ = unit_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.autoAck_ = autoAck_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Get) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Get)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Get other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Get.getDefaultInstance()) return this;
-        if (other.hasDestination()) {
-          setDestination(other.getDestination());
-        }
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
-        }
-        if (other.hasFetchSize()) {
-          setFetchSize(other.getFetchSize());
-        }
-        if (other.hasTimeout()) {
-          setTimeout(other.getTimeout());
-        }
-        if (other.hasUnit()) {
-          setUnit(other.getUnit());
-        }
-        if (other.hasAutoAck()) {
-          setAutoAck(other.getAutoAck());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -5221,26 +6687,581 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Get.class, com.alibaba.otter.canal.protocol.CanalPacket.Get.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Get> PARSER =
+        new com.google.protobuf.AbstractParser<Get>() {
+      public Get parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Get(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Get> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string destination = 1;
+    public static final int DESTINATION_FIELD_NUMBER = 1;
+    private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public boolean hasDestination() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public java.lang.String getDestination() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          destination_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        destination_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string client_id = 2;
+    public static final int CLIENT_ID_FIELD_NUMBER = 2;
+    private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int32 fetch_size = 3;
+    public static final int FETCH_SIZE_FIELD_NUMBER = 3;
+    private int fetchSize_;
+    /**
+     * <code>optional int32 fetch_size = 3;</code>
+     */
+    public boolean hasFetchSize() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 fetch_size = 3;</code>
+     */
+    public int getFetchSize() {
+      return fetchSize_;
+    }
+
+    // optional int64 timeout = 4 [default = -1];
+    public static final int TIMEOUT_FIELD_NUMBER = 4;
+    private long timeout_;
+    /**
+     * <code>optional int64 timeout = 4 [default = -1];</code>
+     *
+     * <pre>
+     * 默认-1时代表不控制
+     * </pre>
+     */
+    public boolean hasTimeout() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 timeout = 4 [default = -1];</code>
+     *
+     * <pre>
+     * 默认-1时代表不控制
+     * </pre>
+     */
+    public long getTimeout() {
+      return timeout_;
+    }
+
+    // optional int32 unit = 5 [default = 2];
+    public static final int UNIT_FIELD_NUMBER = 5;
+    private int unit_;
+    /**
+     * <code>optional int32 unit = 5 [default = 2];</code>
+     *
+     * <pre>
+     * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+     * </pre>
+     */
+    public boolean hasUnit() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 unit = 5 [default = 2];</code>
+     *
+     * <pre>
+     * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+     * </pre>
+     */
+    public int getUnit() {
+      return unit_;
+    }
+
+    // optional bool auto_ack = 6 [default = false];
+    public static final int AUTO_ACK_FIELD_NUMBER = 6;
+    private boolean autoAck_;
+    /**
+     * <code>optional bool auto_ack = 6 [default = false];</code>
+     *
+     * <pre>
+     * 是否自动ack
+     * </pre>
+     */
+    public boolean hasAutoAck() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional bool auto_ack = 6 [default = false];</code>
+     *
+     * <pre>
+     * 是否自动ack
+     * </pre>
+     */
+    public boolean getAutoAck() {
+      return autoAck_;
+    }
+
+    private void initFields() {
+      destination_ = "";
+      clientId_ = "";
+      fetchSize_ = 0;
+      timeout_ = -1L;
+      unit_ = 2;
+      autoAck_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, fetchSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, timeout_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, unit_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(6, autoAck_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, fetchSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timeout_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, unit_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, autoAck_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Get parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Get prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Get}
+     *
+     * <pre>
+     *  PullRequest
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.alibaba.otter.canal.protocol.CanalPacket.GetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Get.class, com.alibaba.otter.canal.protocol.CanalPacket.Get.Builder.class);
+      }
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Get.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        destination_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fetchSize_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timeout_ = -1L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        unit_ = 2;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        autoAck_ = false;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Get_descriptor;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Get getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.Get.getDefaultInstance();
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Get build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Get result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Get buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Get result = new com.alibaba.otter.canal.protocol.CanalPacket.Get(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.destination_ = destination_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.fetchSize_ = fetchSize_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.timeout_ = timeout_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.unit_ = unit_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.autoAck_ = autoAck_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Get) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Get)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Get other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Get.getDefaultInstance()) return this;
+        if (other.hasDestination()) {
+          bitField0_ |= 0x00000001;
+          destination_ = other.destination_;
+          onChanged();
+        }
+        if (other.hasClientId()) {
+          bitField0_ |= 0x00000002;
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (other.hasFetchSize()) {
+          setFetchSize(other.getFetchSize());
+        }
+        if (other.hasTimeout()) {
+          setTimeout(other.getTimeout());
+        }
+        if (other.hasUnit()) {
+          setUnit(other.getUnit());
+        }
+        if (other.hasAutoAck()) {
+          setAutoAck(other.getAutoAck());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.alibaba.otter.canal.protocol.CanalPacket.Get parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Get) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // optional string destination = 1;
       private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public boolean hasDestination() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getDestination() {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public java.lang.String getDestination() {
         java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           destination_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setDestination(String value) {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5249,34 +7270,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public Builder clearDestination() {
         bitField0_ = (bitField0_ & ~0x00000001);
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         destination_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string client_id = 2;
       private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public boolean hasClientId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getClientId() {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           clientId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClientId(String value) {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5285,191 +7344,409 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public Builder clearClientId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         clientId_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional int32 fetch_size = 3;
       private int fetchSize_ ;
+      /**
+       * <code>optional int32 fetch_size = 3;</code>
+       */
       public boolean hasFetchSize() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int32 fetch_size = 3;</code>
+       */
       public int getFetchSize() {
         return fetchSize_;
       }
+      /**
+       * <code>optional int32 fetch_size = 3;</code>
+       */
       public Builder setFetchSize(int value) {
         bitField0_ |= 0x00000004;
         fetchSize_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 fetch_size = 3;</code>
+       */
       public Builder clearFetchSize() {
         bitField0_ = (bitField0_ & ~0x00000004);
         fetchSize_ = 0;
         onChanged();
         return this;
       }
-      
+
       // optional int64 timeout = 4 [default = -1];
       private long timeout_ = -1L;
+      /**
+       * <code>optional int64 timeout = 4 [default = -1];</code>
+       *
+       * <pre>
+       * 默认-1时代表不控制
+       * </pre>
+       */
       public boolean hasTimeout() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional int64 timeout = 4 [default = -1];</code>
+       *
+       * <pre>
+       * 默认-1时代表不控制
+       * </pre>
+       */
       public long getTimeout() {
         return timeout_;
       }
+      /**
+       * <code>optional int64 timeout = 4 [default = -1];</code>
+       *
+       * <pre>
+       * 默认-1时代表不控制
+       * </pre>
+       */
       public Builder setTimeout(long value) {
         bitField0_ |= 0x00000008;
         timeout_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 timeout = 4 [default = -1];</code>
+       *
+       * <pre>
+       * 默认-1时代表不控制
+       * </pre>
+       */
       public Builder clearTimeout() {
         bitField0_ = (bitField0_ & ~0x00000008);
         timeout_ = -1L;
         onChanged();
         return this;
       }
-      
+
       // optional int32 unit = 5 [default = 2];
       private int unit_ = 2;
+      /**
+       * <code>optional int32 unit = 5 [default = 2];</code>
+       *
+       * <pre>
+       * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+       * </pre>
+       */
       public boolean hasUnit() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+      /**
+       * <code>optional int32 unit = 5 [default = 2];</code>
+       *
+       * <pre>
+       * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+       * </pre>
+       */
       public int getUnit() {
         return unit_;
       }
+      /**
+       * <code>optional int32 unit = 5 [default = 2];</code>
+       *
+       * <pre>
+       * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+       * </pre>
+       */
       public Builder setUnit(int value) {
         bitField0_ |= 0x00000010;
         unit_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 unit = 5 [default = 2];</code>
+       *
+       * <pre>
+       * 数字类型，0:纳秒,1:毫秒,2:微秒,3:秒,4:分钟,5:小时,6:天
+       * </pre>
+       */
       public Builder clearUnit() {
         bitField0_ = (bitField0_ & ~0x00000010);
         unit_ = 2;
         onChanged();
         return this;
       }
-      
+
       // optional bool auto_ack = 6 [default = false];
       private boolean autoAck_ ;
+      /**
+       * <code>optional bool auto_ack = 6 [default = false];</code>
+       *
+       * <pre>
+       * 是否自动ack
+       * </pre>
+       */
       public boolean hasAutoAck() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
+      /**
+       * <code>optional bool auto_ack = 6 [default = false];</code>
+       *
+       * <pre>
+       * 是否自动ack
+       * </pre>
+       */
       public boolean getAutoAck() {
         return autoAck_;
       }
+      /**
+       * <code>optional bool auto_ack = 6 [default = false];</code>
+       *
+       * <pre>
+       * 是否自动ack
+       * </pre>
+       */
       public Builder setAutoAck(boolean value) {
         bitField0_ |= 0x00000020;
         autoAck_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional bool auto_ack = 6 [default = false];</code>
+       *
+       * <pre>
+       * 是否自动ack
+       * </pre>
+       */
       public Builder clearAutoAck() {
         bitField0_ = (bitField0_ & ~0x00000020);
         autoAck_ = false;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Get)
     }
-    
+
     static {
       defaultInstance = new Get(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Get)
   }
-  
+
   public interface MessagesOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional int64 batch_id = 1;
+    /**
+     * <code>optional int64 batch_id = 1;</code>
+     */
     boolean hasBatchId();
+    /**
+     * <code>optional int64 batch_id = 1;</code>
+     */
     long getBatchId();
-    
+
     // repeated bytes messages = 2;
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     java.util.List<com.google.protobuf.ByteString> getMessagesList();
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     int getMessagesCount();
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     com.google.protobuf.ByteString getMessages(int index);
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Messages}
+   *
+   * <pre>
+   * </pre>
+   */
   public static final class Messages extends
       com.google.protobuf.GeneratedMessage
       implements MessagesOrBuilder {
     // Use Messages.newBuilder() to construct.
-    private Messages(Builder builder) {
+    private Messages(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Messages(boolean noInit) {}
-    
+    private Messages(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Messages defaultInstance;
     public static Messages getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Messages getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Messages(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              batchId_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                messages_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              messages_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          messages_ = java.util.Collections.unmodifiableList(messages_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Messages.class, com.alibaba.otter.canal.protocol.CanalPacket.Messages.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Messages> PARSER =
+        new com.google.protobuf.AbstractParser<Messages>() {
+      public Messages parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Messages(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Messages> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
     // optional int64 batch_id = 1;
     public static final int BATCH_ID_FIELD_NUMBER = 1;
     private long batchId_;
+    /**
+     * <code>optional int64 batch_id = 1;</code>
+     */
     public boolean hasBatchId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>optional int64 batch_id = 1;</code>
+     */
     public long getBatchId() {
       return batchId_;
     }
-    
+
     // repeated bytes messages = 2;
     public static final int MESSAGES_FIELD_NUMBER = 2;
     private java.util.List<com.google.protobuf.ByteString> messages_;
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     public java.util.List<com.google.protobuf.ByteString>
         getMessagesList() {
       return messages_;
     }
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     public int getMessagesCount() {
       return messages_.size();
     }
+    /**
+     * <code>repeated bytes messages = 2;</code>
+     */
     public com.google.protobuf.ByteString getMessages(int index) {
       return messages_.get(index);
     }
-    
+
     private void initFields() {
       batchId_ = 0L;
-      messages_ = java.util.Collections.emptyList();;
+      messages_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -5481,12 +7758,12 @@ public final class CanalPacket {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -5505,94 +7782,86 @@ public final class CanalPacket {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.alibaba.otter.canal.protocol.CanalPacket.Messages parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Messages prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Messages}
+     *
+     * <pre>
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.alibaba.otter.canal.protocol.CanalPacket.MessagesOrBuilder {
@@ -5600,18 +7869,21 @@ public final class CanalPacket {
           getDescriptor() {
         return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Messages.class, com.alibaba.otter.canal.protocol.CanalPacket.Messages.Builder.class);
       }
-      
+
       // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Messages.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5622,29 +7894,29 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         batchId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        messages_ = java.util.Collections.emptyList();;
+        messages_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Messages.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Messages_descriptor;
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Messages getDefaultInstanceForType() {
         return com.alibaba.otter.canal.protocol.CanalPacket.Messages.getDefaultInstance();
       }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Messages build() {
         com.alibaba.otter.canal.protocol.CanalPacket.Messages result = buildPartial();
         if (!result.isInitialized()) {
@@ -5652,17 +7924,7 @@ public final class CanalPacket {
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Messages buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Messages result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.alibaba.otter.canal.protocol.CanalPacket.Messages buildPartial() {
         com.alibaba.otter.canal.protocol.CanalPacket.Messages result = new com.alibaba.otter.canal.protocol.CanalPacket.Messages(this);
         int from_bitField0_ = bitField0_;
@@ -5680,7 +7942,7 @@ public final class CanalPacket {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Messages) {
           return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Messages)other);
@@ -5689,7 +7951,7 @@ public final class CanalPacket {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Messages other) {
         if (other == com.alibaba.otter.canal.protocol.CanalPacket.Messages.getDefaultInstance()) return this;
         if (other.hasBatchId()) {
@@ -5708,89 +7970,93 @@ public final class CanalPacket {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              batchId_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              ensureMessagesIsMutable();
-              messages_.add(input.readBytes());
-              break;
-            }
+        com.alibaba.otter.canal.protocol.CanalPacket.Messages parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Messages) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // optional int64 batch_id = 1;
       private long batchId_ ;
+      /**
+       * <code>optional int64 batch_id = 1;</code>
+       */
       public boolean hasBatchId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional int64 batch_id = 1;</code>
+       */
       public long getBatchId() {
         return batchId_;
       }
+      /**
+       * <code>optional int64 batch_id = 1;</code>
+       */
       public Builder setBatchId(long value) {
         bitField0_ |= 0x00000001;
         batchId_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 batch_id = 1;</code>
+       */
       public Builder clearBatchId() {
         bitField0_ = (bitField0_ & ~0x00000001);
         batchId_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // repeated bytes messages = 2;
-      private java.util.List<com.google.protobuf.ByteString> messages_ = java.util.Collections.emptyList();;
+      private java.util.List<com.google.protobuf.ByteString> messages_ = java.util.Collections.emptyList();
       private void ensureMessagesIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           messages_ = new java.util.ArrayList<com.google.protobuf.ByteString>(messages_);
           bitField0_ |= 0x00000002;
          }
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public java.util.List<com.google.protobuf.ByteString>
           getMessagesList() {
         return java.util.Collections.unmodifiableList(messages_);
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public int getMessagesCount() {
         return messages_.size();
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public com.google.protobuf.ByteString getMessages(int index) {
         return messages_.get(index);
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public Builder setMessages(
           int index, com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5801,6 +8067,9 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public Builder addMessages(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -5810,6 +8079,9 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public Builder addAllMessages(
           java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
         ensureMessagesIsMutable();
@@ -5817,400 +8089,117 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated bytes messages = 2;</code>
+       */
       public Builder clearMessages() {
-        messages_ = java.util.Collections.emptyList();;
+        messages_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Messages)
     }
-    
+
     static {
       defaultInstance = new Messages(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Messages)
   }
-  
+
   public interface DumpOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // optional string journal = 1;
+    /**
+     * <code>optional string journal = 1;</code>
+     */
     boolean hasJournal();
-    String getJournal();
-    
+    /**
+     * <code>optional string journal = 1;</code>
+     */
+    java.lang.String getJournal();
+    /**
+     * <code>optional string journal = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getJournalBytes();
+
     // optional int64 position = 2;
+    /**
+     * <code>optional int64 position = 2;</code>
+     */
     boolean hasPosition();
+    /**
+     * <code>optional int64 position = 2;</code>
+     */
     long getPosition();
-    
+
     // optional int64 timestamp = 3 [default = 0];
+    /**
+     * <code>optional int64 timestamp = 3 [default = 0];</code>
+     */
     boolean hasTimestamp();
+    /**
+     * <code>optional int64 timestamp = 3 [default = 0];</code>
+     */
     long getTimestamp();
   }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.Dump}
+   *
+   * <pre>
+   * TBD when new packets are required
+   * </pre>
+   */
   public static final class Dump extends
       com.google.protobuf.GeneratedMessage
       implements DumpOrBuilder {
     // Use Dump.newBuilder() to construct.
-    private Dump(Builder builder) {
+    private Dump(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Dump(boolean noInit) {}
-    
+    private Dump(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Dump defaultInstance;
     public static Dump getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Dump getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional string journal = 1;
-    public static final int JOURNAL_FIELD_NUMBER = 1;
-    private java.lang.Object journal_;
-    public boolean hasJournal() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getJournal() {
-      java.lang.Object ref = journal_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          journal_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getJournalBytes() {
-      java.lang.Object ref = journal_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        journal_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional int64 position = 2;
-    public static final int POSITION_FIELD_NUMBER = 2;
-    private long position_;
-    public boolean hasPosition() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public long getPosition() {
-      return position_;
-    }
-    
-    // optional int64 timestamp = 3 [default = 0];
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
-    private long timestamp_;
-    public boolean hasTimestamp() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public long getTimestamp() {
-      return timestamp_;
-    }
-    
-    private void initFields() {
-      journal_ = "";
-      position_ = 0L;
-      timestamp_ = 0L;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getJournalBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, position_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, timestamp_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getJournalBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, position_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, timestamp_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
+    private Dump(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Dump prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.DumpOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_fieldAccessorTable;
-      }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Dump.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        journal_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        position_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        timestamp_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Dump.getDescriptor();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Dump getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.Dump.getDefaultInstance();
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Dump build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Dump result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.Dump buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.Dump result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.Dump buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.Dump result = new com.alibaba.otter.canal.protocol.CanalPacket.Dump(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.journal_ = journal_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.position_ = position_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.timestamp_ = timestamp_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Dump) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Dump)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Dump other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Dump.getDefaultInstance()) return this;
-        if (other.hasJournal()) {
-          setJournal(other.getJournal());
-        }
-        if (other.hasPosition()) {
-          setPosition(other.getPosition());
-        }
-        if (other.hasTimestamp()) {
-          setTimestamp(other.getTimestamp());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -6231,375 +8220,273 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
-      private int bitField0_;
-      
-      // optional string journal = 1;
-      private java.lang.Object journal_ = "";
-      public boolean hasJournal() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public String getJournal() {
-        java.lang.Object ref = journal_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          journal_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setJournal(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        journal_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearJournal() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        journal_ = getDefaultInstance().getJournal();
-        onChanged();
-        return this;
-      }
-      void setJournal(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
-        journal_ = value;
-        onChanged();
-      }
-      
-      // optional int64 position = 2;
-      private long position_ ;
-      public boolean hasPosition() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public long getPosition() {
-        return position_;
-      }
-      public Builder setPosition(long value) {
-        bitField0_ |= 0x00000002;
-        position_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearPosition() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        position_ = 0L;
-        onChanged();
-        return this;
-      }
-      
-      // optional int64 timestamp = 3 [default = 0];
-      private long timestamp_ ;
-      public boolean hasTimestamp() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public long getTimestamp() {
-        return timestamp_;
-      }
-      public Builder setTimestamp(long value) {
-        bitField0_ |= 0x00000004;
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearTimestamp() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        timestamp_ = 0L;
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Dump)
     }
-    
-    static {
-      defaultInstance = new Dump(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Dump)
-  }
-  
-  public interface ClientRollbackOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional string destination = 1;
-    boolean hasDestination();
-    String getDestination();
-    
-    // optional string client_id = 2;
-    boolean hasClientId();
-    String getClientId();
-    
-    // optional int64 batch_id = 3;
-    boolean hasBatchId();
-    long getBatchId();
-  }
-  public static final class ClientRollback extends
-      com.google.protobuf.GeneratedMessage
-      implements ClientRollbackOrBuilder {
-    // Use ClientRollback.newBuilder() to construct.
-    private ClientRollback(Builder builder) {
-      super(builder);
-    }
-    private ClientRollback(boolean noInit) {}
-    
-    private static final ClientRollback defaultInstance;
-    public static ClientRollback getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public ClientRollback getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable;
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.Dump.class, com.alibaba.otter.canal.protocol.CanalPacket.Dump.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Dump> PARSER =
+        new com.google.protobuf.AbstractParser<Dump>() {
+      public Dump parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Dump(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Dump> getParserForType() {
+      return PARSER;
+    }
+
     private int bitField0_;
-    // optional string destination = 1;
-    public static final int DESTINATION_FIELD_NUMBER = 1;
-    private java.lang.Object destination_;
-    public boolean hasDestination() {
+    // optional string journal = 1;
+    public static final int JOURNAL_FIELD_NUMBER = 1;
+    private java.lang.Object journal_;
+    /**
+     * <code>optional string journal = 1;</code>
+     */
+    public boolean hasJournal() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
-        return (String) ref;
+    /**
+     * <code>optional string journal = 1;</code>
+     */
+    public java.lang.String getJournal() {
+      java.lang.Object ref = journal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          destination_ = s;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          journal_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof String) {
+    /**
+     * <code>optional string journal = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getJournalBytes() {
+      java.lang.Object ref = journal_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        destination_ = b;
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        journal_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // optional string client_id = 2;
-    public static final int CLIENT_ID_FIELD_NUMBER = 2;
-    private java.lang.Object clientId_;
-    public boolean hasClientId() {
+
+    // optional int64 position = 2;
+    public static final int POSITION_FIELD_NUMBER = 2;
+    private long position_;
+    /**
+     * <code>optional int64 position = 2;</code>
+     */
+    public boolean hasPosition() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          clientId_ = s;
-        }
-        return s;
-      }
+    /**
+     * <code>optional int64 position = 2;</code>
+     */
+    public long getPosition() {
+      return position_;
     }
-    private com.google.protobuf.ByteString getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional int64 batch_id = 3;
-    public static final int BATCH_ID_FIELD_NUMBER = 3;
-    private long batchId_;
-    public boolean hasBatchId() {
+
+    // optional int64 timestamp = 3 [default = 0];
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private long timestamp_;
+    /**
+     * <code>optional int64 timestamp = 3 [default = 0];</code>
+     */
+    public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    public long getBatchId() {
-      return batchId_;
+    /**
+     * <code>optional int64 timestamp = 3 [default = 0];</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
     }
-    
+
     private void initFields() {
-      destination_ = "";
-      clientId_ = "";
-      batchId_ = 0L;
+      journal_ = "";
+      position_ = 0L;
+      timestamp_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getDestinationBytes());
+        output.writeBytes(1, getJournalBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getClientIdBytes());
+        output.writeInt64(2, position_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt64(3, batchId_);
+        output.writeInt64(3, timestamp_);
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getDestinationBytes());
+          .computeBytesSize(1, getJournalBytes());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getClientIdBytes());
+          .computeInt64Size(2, position_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, batchId_);
+          .computeInt64Size(3, timestamp_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(byte[] data)
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(java.io.InputStream input)
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseDelimitedFrom(java.io.InputStream input)
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseDelimitedFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
-    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+    public static com.alibaba.otter.canal.protocol.CanalPacket.Dump parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback prototype) {
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.Dump prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.Dump}
+     *
+     * <pre>
+     * TBD when new packets are required
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientRollbackOrBuilder {
+       implements com.alibaba.otter.canal.protocol.CanalPacket.DumpOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable;
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.Dump.class, com.alibaba.otter.canal.protocol.CanalPacket.Dump.Builder.class);
       }
-      
-      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.newBuilder()
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.Dump.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6610,118 +8497,351 @@ public final class CanalPacket {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
-        destination_ = "";
+        journal_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        clientId_ = "";
+        position_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        batchId_ = 0L;
+        timestamp_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.getDescriptor();
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor;
       }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback getDefaultInstanceForType() {
-        return com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.getDefaultInstance();
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Dump getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.Dump.getDefaultInstance();
       }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback build() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback result = buildPartial();
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Dump build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Dump result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
-      
-      private com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback buildPartial() {
-        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback(this);
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.Dump buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.Dump result = new com.alibaba.otter.canal.protocol.CanalPacket.Dump(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.destination_ = destination_;
+        result.journal_ = journal_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.clientId_ = clientId_;
+        result.position_ = position_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.batchId_ = batchId_;
+        result.timestamp_ = timestamp_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback) {
-          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback)other);
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.Dump) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.Dump)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-      
-      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback other) {
-        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.getDefaultInstance()) return this;
-        if (other.hasDestination()) {
-          setDestination(other.getDestination());
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.Dump other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.Dump.getDefaultInstance()) return this;
+        if (other.hasJournal()) {
+          bitField0_ |= 0x00000001;
+          journal_ = other.journal_;
+          onChanged();
         }
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
+        if (other.hasPosition()) {
+          setPosition(other.getPosition());
         }
-        if (other.hasBatchId()) {
-          setBatchId(other.getBatchId());
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+        com.alibaba.otter.canal.protocol.CanalPacket.Dump parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.Dump) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional string journal = 1;
+      private java.lang.Object journal_ = "";
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public boolean hasJournal() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public java.lang.String getJournal() {
+        java.lang.Object ref = journal_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          journal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getJournalBytes() {
+        java.lang.Object ref = journal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          journal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public Builder setJournal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        journal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public Builder clearJournal() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        journal_ = getDefaultInstance().getJournal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string journal = 1;</code>
+       */
+      public Builder setJournalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        journal_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 position = 2;
+      private long position_ ;
+      /**
+       * <code>optional int64 position = 2;</code>
+       */
+      public boolean hasPosition() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 position = 2;</code>
+       */
+      public long getPosition() {
+        return position_;
+      }
+      /**
+       * <code>optional int64 position = 2;</code>
+       */
+      public Builder setPosition(long value) {
+        bitField0_ |= 0x00000002;
+        position_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 position = 2;</code>
+       */
+      public Builder clearPosition() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        position_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 timestamp = 3 [default = 0];
+      private long timestamp_ ;
+      /**
+       * <code>optional int64 timestamp = 3 [default = 0];</code>
+       */
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 timestamp = 3 [default = 0];</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>optional int64 timestamp = 3 [default = 0];</code>
+       */
+      public Builder setTimestamp(long value) {
+        bitField0_ |= 0x00000004;
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 timestamp = 3 [default = 0];</code>
+       */
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.Dump)
+    }
+
+    static {
+      defaultInstance = new Dump(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.Dump)
+  }
+
+  public interface ClientRollbackOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional string destination = 1;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    boolean hasDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    java.lang.String getDestination();
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDestinationBytes();
+
+    // optional string client_id = 2;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    boolean hasClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    // optional int64 batch_id = 3;
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    boolean hasBatchId();
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    long getBatchId();
+  }
+  /**
+   * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientRollback}
+   */
+  public static final class ClientRollback extends
+      com.google.protobuf.GeneratedMessage
+      implements ClientRollbackOrBuilder {
+    // Use ClientRollback.newBuilder() to construct.
+    private ClientRollback(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ClientRollback(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ClientRollback defaultInstance;
+    public static ClientRollback getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ClientRollback getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientRollback(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
+              done = true;
+              break;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
+                done = true;
               }
               break;
             }
@@ -6742,26 +8862,454 @@ public final class CanalPacket {
             }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ClientRollback> PARSER =
+        new com.google.protobuf.AbstractParser<ClientRollback>() {
+      public ClientRollback parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientRollback(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientRollback> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string destination = 1;
+    public static final int DESTINATION_FIELD_NUMBER = 1;
+    private java.lang.Object destination_;
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public boolean hasDestination() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public java.lang.String getDestination() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          destination_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string destination = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDestinationBytes() {
+      java.lang.Object ref = destination_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        destination_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string client_id = 2;
+    public static final int CLIENT_ID_FIELD_NUMBER = 2;
+    private java.lang.Object clientId_;
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          clientId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 batch_id = 3;
+    public static final int BATCH_ID_FIELD_NUMBER = 3;
+    private long batchId_;
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    public boolean hasBatchId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 batch_id = 3;</code>
+     */
+    public long getBatchId() {
+      return batchId_;
+    }
+
+    private void initFields() {
+      destination_ = "";
+      clientId_ = "";
+      batchId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, batchId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getDestinationBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getClientIdBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, batchId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.alibaba.otter.canal.protocol.ClientRollback}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.alibaba.otter.canal.protocol.CanalPacket.ClientRollbackOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.class, com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.Builder.class);
+      }
+
+      // Construct using com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        destination_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        batchId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback getDefaultInstanceForType() {
+        return com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.getDefaultInstance();
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback build() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback buildPartial() {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback result = new com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.destination_ = destination_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.batchId_ = batchId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback) {
+          return mergeFrom((com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback other) {
+        if (other == com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.getDefaultInstance()) return this;
+        if (other.hasDestination()) {
+          bitField0_ |= 0x00000001;
+          destination_ = other.destination_;
+          onChanged();
+        }
+        if (other.hasClientId()) {
+          bitField0_ |= 0x00000002;
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (other.hasBatchId()) {
+          setBatchId(other.getBatchId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
+
       // optional string destination = 1;
       private java.lang.Object destination_ = "";
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public boolean hasDestination() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getDestination() {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public java.lang.String getDestination() {
         java.lang.Object ref = destination_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           destination_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setDestination(String value) {
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDestinationBytes() {
+        java.lang.Object ref = destination_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          destination_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestination(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6770,34 +9318,72 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string destination = 1;</code>
+       */
       public Builder clearDestination() {
         bitField0_ = (bitField0_ & ~0x00000001);
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
-      void setDestination(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>optional string destination = 1;</code>
+       */
+      public Builder setDestinationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         destination_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional string client_id = 2;
       private java.lang.Object clientId_ = "";
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public boolean hasClientId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getClientId() {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
         java.lang.Object ref = clientId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           clientId_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setClientId(String value) {
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6806,50 +9392,73 @@ public final class CanalPacket {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
       public Builder clearClientId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         clientId_ = getDefaultInstance().getClientId();
         onChanged();
         return this;
       }
-      void setClientId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <code>optional string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         clientId_ = value;
         onChanged();
+        return this;
       }
-      
+
       // optional int64 batch_id = 3;
       private long batchId_ ;
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public boolean hasBatchId() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public long getBatchId() {
         return batchId_;
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public Builder setBatchId(long value) {
         bitField0_ |= 0x00000004;
         batchId_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional int64 batch_id = 3;</code>
+       */
       public Builder clearBatchId() {
         bitField0_ = (bitField0_ & ~0x00000004);
         batchId_ = 0L;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:com.alibaba.otter.canal.protocol.ClientRollback)
     }
-    
+
     static {
       defaultInstance = new ClientRollback(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:com.alibaba.otter.canal.protocol.ClientRollback)
   }
-  
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor;
   private static
@@ -6910,7 +9519,7 @@ public final class CanalPacket {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -6969,97 +9578,73 @@ public final class CanalPacket {
           internal_static_com_alibaba_otter_canal_protocol_Packet_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Packet_descriptor,
-              new java.lang.String[] { "MagicNumber", "Version", "Type", "Compression", "Body", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Packet.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Packet.Builder.class);
+              new java.lang.String[] { "MagicNumber", "Version", "Type", "Compression", "Body", });
           internal_static_com_alibaba_otter_canal_protocol_HeartBeat_descriptor =
             getDescriptor().getMessageTypes().get(1);
           internal_static_com_alibaba_otter_canal_protocol_HeartBeat_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_HeartBeat_descriptor,
-              new java.lang.String[] { "SendTimestamp", "StartTimestamp", },
-              com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.HeartBeat.Builder.class);
+              new java.lang.String[] { "SendTimestamp", "StartTimestamp", });
           internal_static_com_alibaba_otter_canal_protocol_Handshake_descriptor =
             getDescriptor().getMessageTypes().get(2);
           internal_static_com_alibaba_otter_canal_protocol_Handshake_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Handshake_descriptor,
-              new java.lang.String[] { "CommunicationEncoding", "Seeds", "SupportedCompressions", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Handshake.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Handshake.Builder.class);
+              new java.lang.String[] { "CommunicationEncoding", "Seeds", "SupportedCompressions", });
           internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_com_alibaba_otter_canal_protocol_ClientAuth_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_ClientAuth_descriptor,
-              new java.lang.String[] { "Username", "Password", "NetReadTimeout", "NetWriteTimeout", "Destination", "ClientId", "Filter", "StartTimestamp", },
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientAuth.Builder.class);
+              new java.lang.String[] { "Username", "Password", "NetReadTimeout", "NetWriteTimeout", "Destination", "ClientId", "Filter", "StartTimestamp", });
           internal_static_com_alibaba_otter_canal_protocol_Ack_descriptor =
             getDescriptor().getMessageTypes().get(4);
           internal_static_com_alibaba_otter_canal_protocol_Ack_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Ack_descriptor,
-              new java.lang.String[] { "ErrorCode", "ErrorMessage", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Ack.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Ack.Builder.class);
+              new java.lang.String[] { "ErrorCode", "ErrorMessage", });
           internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor =
             getDescriptor().getMessageTypes().get(5);
           internal_static_com_alibaba_otter_canal_protocol_ClientAck_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_ClientAck_descriptor,
-              new java.lang.String[] { "Destination", "ClientId", "BatchId", },
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientAck.Builder.class);
+              new java.lang.String[] { "Destination", "ClientId", "BatchId", });
           internal_static_com_alibaba_otter_canal_protocol_Sub_descriptor =
             getDescriptor().getMessageTypes().get(6);
           internal_static_com_alibaba_otter_canal_protocol_Sub_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Sub_descriptor,
-              new java.lang.String[] { "Destination", "ClientId", "Filter", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Sub.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Sub.Builder.class);
+              new java.lang.String[] { "Destination", "ClientId", "Filter", });
           internal_static_com_alibaba_otter_canal_protocol_Unsub_descriptor =
             getDescriptor().getMessageTypes().get(7);
           internal_static_com_alibaba_otter_canal_protocol_Unsub_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Unsub_descriptor,
-              new java.lang.String[] { "Destination", "ClientId", "Filter", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Unsub.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Unsub.Builder.class);
+              new java.lang.String[] { "Destination", "ClientId", "Filter", });
           internal_static_com_alibaba_otter_canal_protocol_Get_descriptor =
             getDescriptor().getMessageTypes().get(8);
           internal_static_com_alibaba_otter_canal_protocol_Get_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Get_descriptor,
-              new java.lang.String[] { "Destination", "ClientId", "FetchSize", "Timeout", "Unit", "AutoAck", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Get.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Get.Builder.class);
+              new java.lang.String[] { "Destination", "ClientId", "FetchSize", "Timeout", "Unit", "AutoAck", });
           internal_static_com_alibaba_otter_canal_protocol_Messages_descriptor =
             getDescriptor().getMessageTypes().get(9);
           internal_static_com_alibaba_otter_canal_protocol_Messages_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Messages_descriptor,
-              new java.lang.String[] { "BatchId", "Messages", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Messages.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Messages.Builder.class);
+              new java.lang.String[] { "BatchId", "Messages", });
           internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor =
             getDescriptor().getMessageTypes().get(10);
           internal_static_com_alibaba_otter_canal_protocol_Dump_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_Dump_descriptor,
-              new java.lang.String[] { "Journal", "Position", "Timestamp", },
-              com.alibaba.otter.canal.protocol.CanalPacket.Dump.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.Dump.Builder.class);
+              new java.lang.String[] { "Journal", "Position", "Timestamp", });
           internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor =
             getDescriptor().getMessageTypes().get(11);
           internal_static_com_alibaba_otter_canal_protocol_ClientRollback_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_com_alibaba_otter_canal_protocol_ClientRollback_descriptor,
-              new java.lang.String[] { "Destination", "ClientId", "BatchId", },
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.class,
-              com.alibaba.otter.canal.protocol.CanalPacket.ClientRollback.Builder.class);
+              new java.lang.String[] { "Destination", "ClientId", "BatchId", });
           return null;
         }
       };
@@ -7068,6 +9653,6 @@ public final class CanalPacket {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }
